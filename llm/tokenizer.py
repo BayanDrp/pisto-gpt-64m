@@ -9,11 +9,7 @@ class ByteTokenizer:
     def __init__(self, path=None):
         if path is None:
             root = Path(__file__).parent.parent
-            candidates = [
-                root / "weights" / "bpe_tokenizer.json",
-                root / "config" / "bpe_tokenizer.json",
-            ]
-            path = str(next((p for p in candidates if p.exists()), candidates[-1]))
+            path = str(root / "config" / "bpe_tokenizer.json")
         from tokenizers import Tokenizer, decoders
         self._tok = Tokenizer.from_file(path)
         self._tok.decoder = decoders.ByteLevel()

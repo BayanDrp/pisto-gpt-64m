@@ -30,7 +30,7 @@ done
 
 echo "==> [3/6] Uploading repo to VM..."
 cd "$REPO"
-tar czf "$BUNDLE" --exclude=.git --exclude=weights/best.pt --exclude=weights/instruct --exclude=weights/instruct_best.pt .
+tar czf "$BUNDLE" --exclude=.git --exclude=weights/pretrain_best.pt --exclude=weights/instruct_best.pt .
 echo "import os; os.makedirs('$REMOTE', exist_ok=True); print('dir ready')" | colab exec -s "$SESSION"
 colab upload -s "$SESSION" "$BUNDLE" "$REMOTE/bundle.tgz"
 echo "import subprocess; subprocess.run('cd $REMOTE && tar xzf bundle.tgz && rm bundle.tgz', shell=True, check=True); print('extracted')" | colab exec -s "$SESSION"
@@ -43,10 +43,10 @@ echo "import subprocess; subprocess.run('cd $REMOTE && python3 training/pretrain
 
 echo "==> [6/6] Downloading weights to your PC..."
 mkdir -p "$REPO/weights"
-colab download -s "$SESSION" "$REMOTE/weights/best.pt" "$REPO/weights/best.pt"
+colab download -s "$SESSION" "$REMOTE/weights/pretrain_best.pt" "$REPO/weights/pretrain_best.pt"
 
 echo ""
 echo "DONE. Pretrained weights saved to:"
-echo "  $REPO/weights/best.pt"
+echo "  $REPO/weights/pretrain_best.pt"
 echo ""
-echo "Next: run ./train_finetune.sh to instruction-tune this checkpoint."
+echo "Next: run ./scripts/colab_finetune.sh to instruction-tune this checkpoint."

@@ -167,21 +167,21 @@ def evaluate(n=30):
     return total / max(n, 1)
 
 def save_ckpt(step, loss):
-    path = SAVE_DIR / "best.pt"
+    path = SAVE_DIR / "pretrain_best.pt"
     th.save({
         "step": step,
         "loss": loss,
         "model": mdl.state_dict(),
         "optimizer": optimizer.state_dict(),
     }, path)
-    print(f"  ✓ best.pt saved (step={step:,})")
+    print(f"  ✓ pretrain_best.pt saved (step={step:,})")
 
 # ── Resume ───────────────────────────────────────────────────
 step      = 0
 best_eval = float("inf")
 loss_val  = 0.0
 
-resume_path = SAVE_DIR / "best.pt"
+resume_path = SAVE_DIR / "pretrain_best.pt"
 if resume_path.exists():
     print(f"Resuming from {resume_path}...")
     ckpt = th.load(resume_path, map_location=device, weights_only=False)

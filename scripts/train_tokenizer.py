@@ -32,18 +32,14 @@ def main():
         show_progress=True,
     ))
 
-    paths = [
-        str(_PROJ / "config" / "bpe_tokenizer.json"),
-        str(_PROJ / "weights" / "bpe_tokenizer.json"),
-    ]
-    for p in paths:
-        tok.save(p)
-        print(f"Saved → {p}")
+    path = str(_PROJ / "config" / "bpe_tokenizer.json")
+    tok.save(path)
+    print(f"Saved → {path}")
     print(f"Vocab: {tok.get_vocab_size()}")
 
     # Verify
     from tokenizer import ByteTokenizer
-    t = ByteTokenizer(paths[-1])
+    t = ByteTokenizer(path)
     ids = t.tokenize("Hello! This is a test.")
     back = t.detokenize(ids)
     print(f"Test: {back} ({len(ids)} tokens, vocab={t.vocab_size})")

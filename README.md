@@ -6,8 +6,8 @@ This repo contains a 64M parameter decoder only GPT. It starts with TinyStories 
 
 If you just want to try the model, download the checkpoints from Hugging Face and place them in `weights/`:
 
-- `best.pt` for pretraining: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/best.pt)
-- `instruct_best.pt` for fine tuning: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/instruct/instruct_best.pt) — put it in `weights/instruct/`
+- `pretrain_best.pt` for pretraining: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/pretrain_best.pt)
+- `instruct_best.pt` for fine tuning: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/instruct_best.pt)
 
 If Hugging Face warns about unauthenticated downloads, export `HF_TOKEN` before you start training.
 
@@ -36,48 +36,52 @@ docker run -p 5000:5000 pisto-gpt
 
 ## Training
 
-If you prefer to run the scripts directly, use these:
+You can train on your own machine or on a free Colab T4 (via the `colab` CLI).
 
-### Pretraining
-
-```bash
-python training/pretrain.py
-```
-
-This trains from scratch on TinyStories. The settings live in `config/train.json`.
-
-### Fine Tuning
+### Local
 
 ```bash
-python training/finetune.py
+python training/pretrain.py    # pretrain from scratch on TinyStories
+python training/finetune.py    # instruction-tune weights/pretrain_best.pt
 ```
 
-This loads `weights/best.pt` and fine-tunes on Alpaca plus the manual Q&A data. The settings live in `config/instruct.json`.
+Settings live in `config/train.json` and `config/instruct.json`. Both scripts
+resume from checkpoints automatically and work on CPU or GPU.
 
-Both scripts resume from checkpoints automatically and work on CPU or GPU.
+### Colab (free GPU)
+
+```bash
+./scripts/colab_pretrain.sh    # Stage 1: pretrain, auto-downloads weights/pretrain_best.pt
+./scripts/colab_finetune.sh    # Stage 2: tune, auto-downloads weights/instruct_best.pt
+```
+
+Or open `notebooks/colab_train.ipynb` in Colab — it saves checkpoints to your
+Google Drive every 30s so a VM recycle never loses progress.
 
 ## Model
 
 | Param | Value |
 |---|---|
 | Architecture | GPT Decoder (Pre-LN) |
-| Parameters | 64M |
+| Parameters | ~68M |
 | Layers | 10 |
 | Heads | 8 |
 | d_model | 720 |
 | FFN | 2880 |
 | Max length | 512 |
-| Tokenizer | Byte-level (vocab 259) |
+| Tokenizer | BPE, ByteLevel (vocab 8192) |
 | Weight tying | Yes |
 
 ## Project Structure
 
 ```
-├── cli.py             # CLI entry point
-├── config/            # Training and generation configs
-├── data/              # Training data
-├── llm/               # Model definition and inference
-├── training/          # Training scripts
-├── ui/                # Flask web UI
-└── weights/           # Trained checkpoints
+├── cli.py               # CLI entry point
+├── config/              # Training/generation configs + bpe_tokenizer.json
+├── data/                # Training data
+├── llm/                 # Model definition, tokenizer, inference
+├── notebooks/           # Colab training notebook
+├── scripts/             # Tokenizer training + Colab shell scripts
+├── training/            # pretrain.py, finetune.py
+├── ui/                  # Flask web UI
+└── weights/             # Checkpoints (pretrain_best.pt, instruct_best.pt)
 ```

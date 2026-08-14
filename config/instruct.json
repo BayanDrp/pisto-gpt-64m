@@ -29,6 +29,6 @@
         "manual_repeat": 10,
         "train_split": 0.95
     },
-    "pretrained_weights": "../weights/best.pt",
-    "save_dir": "../weights/instruct"
+    "pretrained_weights": "../weights/pretrain_best.pt",
+    "save_dir": "../weights"
 }
