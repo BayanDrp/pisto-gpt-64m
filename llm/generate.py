@@ -7,13 +7,14 @@ from model import Model
 # ── Load config ──────────────────────────────────────────────
 _HERE = Path(__file__).parent
 CONFIG_PATH = _HERE.parent / "config" / "generate.json"
+CONFIG_DIR  = CONFIG_PATH.parent
 
 with open(CONFIG_PATH) as f:
     cfg = json.load(f)
 
 model_cfg = cfg["model"]
 gen_cfg   = cfg["generation"]
-weight_path_default = str((_HERE.parent / cfg["weight_path"]).resolve())
+weight_path_default = str((CONFIG_DIR / cfg["weight_path"]).resolve())
 
 device = "cuda" if th.cuda.is_available() else "cpu"
 

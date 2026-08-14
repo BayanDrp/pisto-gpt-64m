@@ -14,8 +14,9 @@ class ByteTokenizer:
                 root / "config" / "bpe_tokenizer.json",
             ]
             path = str(next((p for p in candidates if p.exists()), candidates[-1]))
-        from tokenizers import Tokenizer
+        from tokenizers import Tokenizer, decoders
         self._tok = Tokenizer.from_file(path)
+        self._tok.decoder = decoders.ByteLevel()
         self.vocab_size = self._tok.get_vocab_size()
 
     def tokenize(self, text: str) -> list[int]:

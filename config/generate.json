@@ -7,7 +7,7 @@
         "transformer_layers": 10,
         "max_len": 512
     },
-    "weight_path": "../weights/instruct_best.pt",
+    "weight_path": "../weights/instruct/instruct_best.pt",
     "generation": {
         "max_new": 100,
         "temp": 0.5,

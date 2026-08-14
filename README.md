@@ -7,7 +7,7 @@ This repo contains a 64M parameter decoder only GPT. It starts with TinyStories 
 If you just want to try the model, download the checkpoints from Hugging Face and place them in `weights/`:
 
 - `best.pt` for pretraining: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/best.pt)
-- `instruct_best.pt` for fine tuning: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/instruct_best.pt)
+- `instruct_best.pt` for fine tuning: [Download](https://huggingface.co/notpisto/pisto_gpt/resolve/main/weights/instruct/instruct_best.pt) — put it in `weights/instruct/`
 
 If Hugging Face warns about unauthenticated downloads, export `HF_TOKEN` before you start training.
 
