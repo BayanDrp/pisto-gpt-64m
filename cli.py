@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-APP_SCRIPT = ROOT / "ui" / "app.py"
+APP_SCRIPT = ROOT / "ui" / "pisto-server"  # Go web server (built from ui/main.go)
 PRETRAIN_SCRIPT = ROOT / "training" / "pretrain.py"
 FINE_TUNE_SCRIPT = ROOT / "training" / "finetune.py"
 
@@ -30,7 +30,13 @@ def run_script(script_path: Path) -> int:
         return 1
 
     print(f"\nRunning: {script_path.relative_to(ROOT)}\n")
-    result = subprocess.run([sys.executable, str(script_path)])
+    # Compiled binaries (e.g. the Go server) are executed directly;
+    # Python scripts are run with the current interpreter.
+    if script_path.suffix == ".py":
+        cmd = [sys.executable, str(script_path)]
+    else:
+        cmd = [str(script_path)]
+    result = subprocess.run(cmd)
     return result.returncode
 
 
@@ -61,7 +67,7 @@ def main(argv: list[str] | None = None) -> int:
     choice = prompt_choice(
         "Main menu",
         {
-            "1": "Launch app.py",
+            "1": "Launch web app (Go server)",
             "2": "Train",
         },
     )

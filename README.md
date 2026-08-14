@@ -1,6 +1,6 @@
-# Pisto GPT 64M
+# Pisto GPT 68M
 
-This repo contains a 64M parameter decoder only GPT. It starts with TinyStories pretraining and then gets instruction tuned on Alpaca plus a small manual dataset.
+This repo contains a 68M parameter decoder only GPT. It starts with TinyStories pretraining and then gets instruction tuned on Alpaca plus a small manual dataset.
 
 ## Weights
 
@@ -20,18 +20,29 @@ python cli.py
 
 `cli.py` keeps things simple:
 
-- `1` starts the web app
+- `1` launches the Go web server
 - `2` opens the training menu
   - `1` pretraining
   - `2` fine tuning
 
-Once the app is running, open `http://localhost:5000`.
+Once the app is running, open `http://localhost:8080`.
+
+## Web UI
+
+The web UI is a Go server (source in `ui/main.go` + `ui/handlres.go`) that
+calls Python for inference via `llm/server_bridge.py`.
+
+```bash
+make server-build    # compile the Go server into ui/pisto-server
+make server-tunnel   # run the server + expose it via a free Cloudflare tunnel (works on Colab)
+# or: ./scripts/run_server.sh
+```
 
 ## Docker
 
 ```bash
 docker build -t pisto-gpt .
-docker run -p 5000:5000 pisto-gpt
+docker run -p 8080:8080 pisto-gpt
 ```
 
 ## Training
@@ -82,6 +93,6 @@ Google Drive every 30s so a VM recycle never loses progress.
 ├── notebooks/           # Colab training notebook
 ├── scripts/             # Tokenizer training + Colab shell scripts
 ├── training/            # pretrain.py, finetune.py
-├── ui/                  # Flask web UI
+├── ui/                  # Go web server (main.go, handlres.go, templates/, static/)
 └── weights/             # Checkpoints (pretrain_best.pt, instruct_best.pt)
 ```

@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+ui/pisto-server
+.server.log
+weights/

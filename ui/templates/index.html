@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pisto GPT 64M</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='config.css') }}">
+  <title>Pisto GPT 68M</title>
+  <link rel="stylesheet" href="/static/base.css">
+  <link rel="stylesheet" href="/static/chat.css">
+  <link rel="stylesheet" href="/static/config.css">
 </head>
 <body>
   <div class="app">
-    {% include 'sidebar.html' %}
+    {{template "sidebar" .}}
 
     <main class="main">
       <div class="tab-content active" id="tab-chat">
-        {% include 'chat.html' %}
+        {{template "chat" .}}
       </div>
 
       <div class="tab-content" id="tab-config">
-        {% include 'config.html' %}
+        {{template "config" .}}
       </div>
     </main>
   </div>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="/static/script.js"></script>
 </body>
 </html>
