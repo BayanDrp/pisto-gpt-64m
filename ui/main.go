@@ -52,6 +52,9 @@ func (a *app) routes() {
 	a.mux.HandleFunc("/", a.handleIndex())
 	a.mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir(staticDir()))))
 	a.mux.HandleFunc("/chat", a.handleChat())
+	a.mux.HandleFunc("GET /config", a.handleGetConfig())
+	a.mux.HandleFunc("POST /config", a.handleSaveConfig())
+	a.mux.HandleFunc("/config", a.handleConfigMethodNotAllowed())
 }
 
 func (a *app) respond(w http.ResponseWriter, name string, data any) {

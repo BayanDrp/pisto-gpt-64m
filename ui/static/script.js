@@ -105,3 +105,73 @@ sendBtn.addEventListener("click", sendMessage);
 promptEl.addEventListener("keydown", (e) => {
   if (e.key === "Enter") sendMessage();
 });
+
+// ─── Config load/save ───
+const saveBtn = document.getElementById("saveConfigBtn");
+const saveStatus = document.getElementById("saveStatus");
+let saveStatusTimer = null;
+
+function setSlider(id, valId, value) {
+  const input = document.getElementById(id);
+  const val = document.getElementById(valId);
+  if (!input || !val) return;
+  input.value = value;
+  val.textContent = value;
+}
+
+// Load the saved generation settings from the server and sync the sliders.
+// If the fetch fails, keep the defaults baked into the HTML.
+async function loadConfig() {
+  try {
+    const res = await fetch("/config");
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.temp !== undefined) setSlider("temp", "tempVal", data.temp);
+    if (data.top_k !== undefined) setSlider("top_k", "top_kVal", data.top_k);
+    if (data.top_p !== undefined) setSlider("top_p", "top_pVal", data.top_p);
+    if (data.max_new !== undefined) setSlider("max_new", "max_newVal", data.max_new);
+  } catch (err) {
+    // keep defaults on failure
+  }
+}
+
+function showSaveStatus(msg, ok) {
+  if (!saveStatus) return;
+  saveStatus.textContent = msg;
+  saveStatus.className = "cfg-save-status" + (ok ? " ok" : " err");
+  clearTimeout(saveStatusTimer);
+  saveStatusTimer = setTimeout(() => {
+    saveStatus.textContent = "";
+    saveStatus.className = "cfg-save-status";
+  }, 3000);
+}
+
+async function saveConfig() {
+  if (!saveBtn) return;
+  saveBtn.disabled = true;
+  try {
+    const res = await fetch("/config", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        max_new: parseInt(document.getElementById("max_new").value, 10),
+        temp: parseFloat(document.getElementById("temp").value),
+        top_k: parseInt(document.getElementById("top_k").value, 10),
+        top_p: parseFloat(document.getElementById("top_p").value),
+      }),
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      showSaveStatus("Saved ✓", true);
+    } else {
+      showSaveStatus(data.error || "Save failed", false);
+    }
+  } catch (err) {
+    showSaveStatus(err.message || "Save failed", false);
+  } finally {
+    saveBtn.disabled = false;
+  }
+}
+
+if (saveBtn) saveBtn.addEventListener("click", saveConfig);
+loadConfig();
