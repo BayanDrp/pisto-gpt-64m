@@ -1,3846 +1,1018 @@
 [
     [
-        "Hello!",
-        "Hello! How can I help you today?"
+        "مرحبا!",
+        "مرحباً! كيف يمكنني مساعدتك اليوم؟"
     ],
     [
-        "Hi there!",
-        "Hi! What can I do for you?"
+        "السلام عليكم",
+        "وعليكم السلام! كيف حالك؟"
     ],
     [
-        "How are you?",
-        "I am doing well, thank you for asking!"
+        "كيف حالك؟",
+        "أنا بخير، شكراً لسؤالك!"
     ],
     [
-        "Good morning!",
-        "Good morning! Hope you have a great day!"
+        "صباح الخير!",
+        "صباح النور! أتمنى لك يوماً جميلاً!"
     ],
     [
-        "Good night!",
-        "Good night! Sleep well!"
+        "تصبح على خير!",
+        "تصبح على خير! نم جيداً!"
     ],
     [
-        "What is your name?",
-        "I am a small language model. How can I help?"
+        "ما اسمك؟",
+        "أنا نموذج لغوي صغير. كيف يمكنني مساعدتك؟"
     ],
     [
-        "Who are you?",
-        "I am an AI assistant. I am here to help you!"
+        "من أنت؟",
+        "أنا مساعد ذكاء اصطناعي. أنا هنا لمساعدتك!"
     ],
     [
-        "What can you do?",
-        "I can answer simple questions and tell short stories!"
+        "ماذا يمكنك أن تفعل؟",
+        "يمكنني الإجابة على الأسئلة البسيطة وسرد قصص قصيرة!"
     ],
     [
-        "What is 2 + 2?",
-        "2 + 2 equals 4."
+        "ما هو 2 + 2؟",
+        "2 + 2 يساوي 4."
     ],
     [
-        "What is 5 + 3?",
-        "5 + 3 equals 8."
+        "ما هو 5 + 3؟",
+        "5 + 3 يساوي 8."
     ],
     [
-        "What is 10 - 4?",
-        "10 - 4 equals 6."
+        "ما هو 10 - 4؟",
+        "10 - 4 يساوي 6."
     ],
     [
-        "What is 3 times 3?",
-        "3 times 3 equals 9."
+        "ما هو 3 × 3؟",
+        "3 × 3 يساوي 9."
     ],
     [
-        "What is 10 divided by 2?",
-        "10 divided by 2 equals 5."
+        "ما هو 10 ÷ 2؟",
+        "10 ÷ 2 يساوي 5."
     ],
     [
-        "What color is the sky?",
-        "The sky is blue on a clear day."
+        "ما لون السماء؟",
+        "السماء زرقاء في يوم صافٍ."
     ],
     [
-        "What color is the sun?",
-        "The sun appears yellow or orange."
+        "ما لون الشمس؟",
+        "الشمس تظهر صفراء أو برتقالية."
     ],
     [
-        "What color is grass?",
-        "Grass is green."
+        "ما لون العشب؟",
+        "العشب أخضر."
     ],
     [
-        "What is water?",
-        "Water is a clear liquid. We drink it every day."
+        "ما هو الماء؟",
+        "الماء سائل صافٍ نشربه كل يوم."
     ],
     [
-        "What is fire?",
-        "Fire is hot and gives light. It can be dangerous."
+        "ما هو النار؟",
+        "النار ساخنة وتضيء. قد تكون خطيرة."
     ],
     [
-        "What is the sun?",
-        "The sun is a big star. It gives us light and warmth."
+        "ما هي الشمس؟",
+        "الشمس نجم كبير. تضيء وتدفئنا."
     ],
     [
-        "What is the moon?",
-        "The moon is a large rock that goes around the Earth."
+        "ما هو القمر؟",
+        "القمر صخرة كبيرة تدور حول الأرض."
     ],
     [
-        "What is rain?",
-        "Rain is water that falls from clouds in the sky."
+        "ما هو المطر؟",
+        "المطر ماء يسقط من السحب في السماء."
     ],
     [
-        "What is snow?",
-        "Snow is frozen water that falls from the sky in winter."
+        "ما هو الثلج؟",
+        "الثلج ماء متجمد يسقط من السماء في الشتاء."
     ],
     [
-        "What is the capital of France?",
-        "The capital of France is Paris."
+        "ما هي عاصمة فرنسا؟",
+        "عاصمة فرنسا باريس."
     ],
     [
-        "What is the capital of the USA?",
-        "The capital of the USA is Washington D.C."
+        "ما هي عاصمة أمريكا؟",
+        "عاصمة أمريكا واشنطن العاصمة."
     ],
     [
-        "What is the biggest ocean?",
-        "The Pacific Ocean is the biggest ocean."
+        "ما هو أكبر محيط؟",
+        "المحيط الهادي هو أكبر محيط."
     ],
     [
-        "What is the biggest animal?",
-        "The blue whale is the biggest animal in the world."
+        "ما هو أكبر حيوان؟",
+        "الحوت الأزرق هو أكبر حيوان في العالم."
     ],
     [
-        "Tell me a short story.",
-        "Once there was a little dog named Max. He loved to run and play in the park every day. One day he found a ball and was very happy."
+        "أخبرني قصة قصيرة.",
+        "في يوم من الأيام كان هناك كلب صغير يُدعى ماكس. كان يحب الجري واللعب في الحديقة كل يوم. ذات يوم وجد كرة وشعر بسعادة كبيرة."
     ],
     [
-        "Tell me a story about a cat.",
-        "There was a small cat named Luna. She liked to sit by the window and watch the birds fly by. Every night she slept by the fire."
+        "أخبرني قصة عن قطة.",
+        "كانت هناك قطة صغيرة تُدعى لونا. أحبت الجلوس عند النافذة ومشاهدة الطيور تحلق. كل ليلة كانت تنام بجانب الموقد."
     ],
     [
-        "Tell me a story about a boy.",
-        "There was a boy named Tim. He liked to read books and play outside. One day he found a small bird and took care of it."
+        "أخبرني قصة عن ولد.",
+        "كان هناك ولد يُدعى تيم. كان يحب قراءة الكتب واللعب في الخارج. ذات يوم وجد طائراً صغيراً واعتنى به."
     ],
     [
-        "Tell me a story about a girl.",
-        "There was a girl named Lily. She loved flowers and liked to help her mom in the garden. She was very kind to everyone."
+        "أخبرني قصة عن فتاة.",
+        "كانت هناك فتاة تُدعى ليلي. كانت تحب الزهور وتحب مساعدة أمها في الحديقة. كانت لطيفة مع الجميع."
     ],
     [
-        "Tell me a story about a dragon.",
-        "Once there was a small dragon who could not fly. He practiced every day. One morning he jumped and flew high in the sky."
+        "أخبرني قصة عن تنين.",
+        "في يوم من الأيام كان هناك تنين صغير لم يكن بإمكانه الطيران. كان يتدرب كل يوم. ذات صباح قفز وطاع في السماء."
     ],
     [
-        "Is the sky blue?",
-        "Yes, the sky is blue on a clear day."
+        "هل السماء زرقاء؟",
+        "نعم، السماء زرقاء في يوم صافٍ."
     ],
     [
-        "Is fire cold?",
-        "No, fire is very hot."
+        "هل النار باردة؟",
+        "لا، النار ساخنة جداً."
     ],
     [
-        "Can fish swim?",
-        "Yes, fish can swim very well."
+        "هل السمك يسبح؟",
+        "نعم، السمك يسبح جيداً."
     ],
     [
-        "Can dogs fly?",
-        "No, dogs cannot fly."
+        "هل الكلاب تطير؟",
+        "لا، الكلاب لا تطير."
     ],
     [
-        "Is water wet?",
-        "Yes, water is wet."
+        "هل الماء رطب؟",
+        "نعم، الماء رطب."
     ],
     [
-        "What is a dog?",
-        "A dog is an animal. Dogs are friendly and loyal pets."
+        "ما هو كلب؟",
+        "الكلب حيوان. الكلاب حيوانات أليفة ودودة ومخلصة."
     ],
     [
-        "What is a cat?",
-        "A cat is a small furry animal. Cats are popular pets."
+        "ما هي قطة؟",
+        "القطة حيوان صغير فروي. القطط حيوانات أليفة شائعة."
     ],
     [
-        "What is a tree?",
-        "A tree is a tall plant with a trunk and leaves."
+        "ما هو شجرة؟",
+        "الشجرة نبتة طويلة بجذع وأوراق."
     ],
     [
-        "What is a book?",
-        "A book has pages with words. We read books to learn and have fun."
+        "ما هو كتاب؟",
+        "الكتاب صفحات بكلمات. نقرأ الكتب للتعلم والترفيه."
     ],
     [
-        "What is a car?",
-        "A car is a vehicle with four wheels. People use cars to travel."
+        "ما هو سيارة؟",
+        "السيارة مركبة بأربعة عجلات. يستخدم الناس السيارات للسفر."
     ],
     [
-        "Can you help me?",
-        "Yes, I can help with that."
+        "هل يمكنك مساعدتي؟",
+        "نعم، يمكنني المساعدة في ذلك."
     ],
     [
-        "Please be polite.",
-        "Of course, I will be polite."
+        "كن مهذباً من فضلك.",
+        "بالطبع، سأكون مهذباً."
     ],
     [
-        "Thank you!",
-        "You're welcome!"
+        "شكراً!",
+        "عفواً!"
     ],
     [
-        "What do you do best?",
-        "I do best with short answers, explanations, and simple writing tasks."
+        "ما الذي تفعله بشكل أفضل؟",
+        "أنا الأفضل في الإجابات القصيرة والشروحات ومهام الكتابة البسيطة."
     ],
     [
-        "Can you write code?",
-        "Yes, I can help write and explain code."
+        "هل يمكنك كتابة شيفرة؟",
+        "نعم، يمكنني مساعدتك في كتابة شيفرة وشرحها."
     ],
     [
-        "Can you tell a joke?",
-        "Sure. Why did the cat sit on the computer? It wanted to keep an eye on the mouse."
+        "هل يمكنك إخباري بنكتة؟",
+        "بالطبع. لماذا جلست القطة على الحاسوب؟ لأنها أرادت مراقبة الفأر."
     ],
     [
-        "What should I do if I am stuck?",
-        "Take a short break, check the basics, and ask for help if needed."
+        "ماذا أفعل إذا علقت؟",
+        "خذ استراحة قصيرة، تحقق من الأساسيات، واطلب المساعدة إذا لزم الأمر."
     ],
     [
-        "How do I stay organized?",
-        "Use a simple to-do list and work on one task at a time."
+        "كيف أبقى منظماً؟",
+        "استخدم قائمة مهام بسيطة وعمل على مهمة واحدة في كل مرة."
     ],
     [
-        "What is a good study habit?",
-        "Review a little every day instead of cramming."
+        "ما هي عادة دراسة جيدة؟",
+        "راجع القليل كل يوم بدلاً من الحفظ المكثف."
     ],
     [
-        "What is a good way to learn?",
-        "Practice often and ask questions when something is unclear."
+        "ما هي طريقة جيدة للتعلم؟",
+        "تدرب كثيراً واطلب شروحاً عندما يكون شيء غير واضح."
     ],
     [
-        "What should you do if you do not know the answer?",
-        "Say that you are not sure instead of guessing."
+        "ماذا يجب أن أفعل إذا لم أكن أعرف الإجابة؟",
+        "قل أنك لست متأكداً بدلاً من التخمين."
     ],
     [
-        "How should you answer a vague question?",
-        "Ask for a little more detail."
+        "كيف يجب أن أجيب على سؤال غامض؟",
+        "اطلب مزيداً من التفاصيل."
     ],
     [
-        "What should you do if the user asks for harmful advice?",
-        "Refuse and suggest a safer alternative."
+        "ماذا يجب أن أفعل إذا طلب المستخدم نصاً ضاراً؟",
+        "أرفض واقترح بديلاً أكثر أماناً."
     ],
     [
-        "Can you explain this simply?",
-        "Yes, I can explain it in simple words."
+        "هل يمكنك شرح هذا ببساطة؟",
+        "نعم، يمكنني شرحه بكلمات بسيطة."
     ],
     [
-        "Can you summarize a text?",
-        "Yes, send it and I will give you a short summary."
+        "هل يمكنك تلخيص نص؟",
+        "نعم، أرسله وسأعطيك ملخصاً قصيراً."
     ],
     [
-        "Translate hello to Spanish.",
-        "Hello in Spanish is hola."
+        "ترجم كلمة hello إلى الإسبانية.",
+        "كلمة hello بالإسبانية هي hola."
     ],
     [
-        "What is a synonym for big?",
-        "Large, huge, or enormous."
+        "ما هو مرادف لكلمة كبير؟",
+        "كبير، ضخم، أو هائل."
     ],
     [
-        "What is an antonym for hot?",
-        "Cold."
+        "ما هو عكس كلمة ساخن؟",
+        "بارد."
     ],
     [
-        "What is 6 + 7?",
-        "6 + 7 equals 13."
+        "ما هو 6 + 7؟",
+        "6 + 7 يساوي 13."
     ],
     [
-        "What is 9 - 5?",
-        "9 - 5 equals 4."
+        "ما هو 9 - 5؟",
+        "9 - 5 يساوي 4."
     ],
     [
-        "What is 4 times 6?",
-        "4 times 6 equals 24."
+        "ما هو 4 × 6؟",
+        "4 × 6 يساوي 24."
     ],
     [
-        "What is 12 divided by 3?",
-        "12 divided by 3 equals 4."
+        "ما هو 12 ÷ 3؟",
+        "12 ÷ 3 يساوي 4."
     ],
     [
-        "What is 8 + 8?",
-        "8 + 8 equals 16."
+        "ما هو 8 + 8؟",
+        "8 + 8 يساوي 16."
     ],
     [
-        "What is 11 - 2?",
-        "11 - 2 equals 9."
+        "ما هو 11 - 2؟",
+        "11 - 2 يساوي 9."
     ],
     [
-        "What is 7 times 5?",
-        "7 times 5 equals 35."
+        "ما هو 7 × 5؟",
+        "7 × 5 يساوي 35."
     ],
     [
-        "What is 18 divided by 6?",
-        "18 divided by 6 equals 3."
+        "ما هو 18 ÷ 6؟",
+        "18 ÷ 6 يساوي 3."
     ],
     [
-        "What is half of 10?",
-        "Half of 10 is 5."
+        "ما هو نصف 10؟",
+        "نصف 10 هو 5."
     ],
     [
-        "What is double of 7?",
-        "Double of 7 is 14."
+        "ما هو ضعف 7؟",
+        "ضعف 7 هو 14."
     ],
     [
-        "What is the Sun?",
-        "The Sun is a star at the center of our solar system."
+        "ما هي الشمس؟",
+        "الشمس نجم في مركز نظامنا الشمسي."
     ],
     [
-        "What is Earth?",
-        "Earth is the third planet from the Sun."
+        "ما هي الأرض؟",
+        "الأرض هي الكوكب الثالث من الشمس."
     ],
     [
-        "What is the Moon?",
-        "The Moon is Earth's only natural satellite."
+        "ما هو القمر؟",
+        "القمر هو القمر الطبيعي الوحيد للأرض."
     ],
     [
-        "What is Jupiter?",
-        "Jupiter is the largest planet in the solar system."
+        "ما هو المشتري؟",
+        "المشتري هو أكبر كوكب في النظام الشمسي."
     ],
     [
-        "Which planet is closest to the Sun?",
-        "Mercury is the closest planet to the Sun."
+        "أي كوكب هو الأقرب إلى الشمس؟",
+        "عطارد هو الكوكب الأقرب إلى الشمس."
     ],
     [
-        "Which planet is known as the red planet?",
-        "Mars is known as the red planet."
+        "أي كوكب يُعرف بالكوكب الأحمر؟",
+        "المريخ يُعرف بالكوكب الأحمر."
     ],
     [
-        "Which planet has rings?",
-        "Saturn is famous for its rings."
+        "أي كوكب له حلقات؟",
+        "زحل مشهور بحلقاته."
     ],
     [
-        "How many planets are in the solar system?",
-        "There are eight planets in the solar system."
+        "كم عدد الكواكب في النظام الشمسي؟",
+        "هناك ثمانية كواكب في النظام الشمسي."
     ],
     [
-        "What do planets do?",
-        "Planets orbit the Sun."
+        "ماذا تفعل الكواكب؟",
+        "الكواكب تدور حول الشمس."
     ],
     [
-        "What causes day and night?",
-        "Day and night are caused by Earth's rotation."
+        "ما الذي يسبب الليل والنهار؟",
+        "الليل والنهار ناتجان عن دوران الأرض."
     ],
     [
-        "What causes seasons?",
-        "Seasons are caused by Earth's axial tilt."
+        "ما الذي يسبب الفصول؟",
+        "الفصول ناتجة عن ميلان محور الأرض."
     ],
     [
-        "How long does Earth take to orbit the Sun?",
-        "Earth takes about 365 days to orbit the Sun."
+        "كم تستغرق الأرض للدوران حول الشمس؟",
+        "تستغرق الأرض حوالي 365 يوماً للدوران حول الشمس."
     ],
     [
-        "How long does the Moon take to orbit Earth?",
-        "The Moon takes about 29.5 days to orbit Earth."
+        "كم يستغرق القمر للدوران حول الأرض؟",
+        "يستغرق القمر حوالي 29.5 يوماً للدوران حول الأرض."
     ],
     [
-        "What is a natural satellite?",
-        "A natural satellite is a body that orbits a planet."
+        "ما هو القمر الطبيعي؟",
+        "القمر الطبيعي هو جرم يدور حول كوكب."
     ],
     [
-        "What is the Milky Way?",
-        "The Milky Way is the galaxy that contains the Solar System."
+        "ما درب التبانة؟",
+        "درب التبانة هي المجرة التي تحتوي على نظامنا الشمسي."
     ],
     [
-        "What is a galaxy?",
-        "A galaxy is a huge collection of stars, gas, and dust."
+        "ما هي المجرة؟",
+        "المجرة هي مجموعة ضخمة من النجوم والغاز والغبار."
     ],
     [
-        "What is a star?",
-        "A star is a giant ball of hot glowing gas."
+        "ما هو نجم؟",
+        "النجم كرة ضخمة من الغاز المتوهج الساخن."
     ],
     [
-        "What is a planet?",
-        "A planet is a body that orbits a star."
+        "ما هو كوكب؟",
+        "الكوكب هو جرم يدور حول نجم."
     ],
     [
-        "What is a moon?",
-        "A moon is a natural satellite that orbits a planet."
+        "ما هو قمر؟",
+        "القمر هو قمر طبيعي يدور حول كوكب."
     ],
     [
-        "What is gravity?",
-        "Gravity is the force that pulls objects toward each other."
+        "ما هو الجاذبية؟",
+        "الجاذبية هي القوة التي تجذب الأجسام نحو بعضها البعض."
     ],
     [
-        "What is the water cycle?",
-        "The water cycle is the continuous movement of water through evaporation, condensation, and precipitation."
+        "ما هو دورة المياه؟",
+        "دورة المياه هي الحركة المستمرة للماء عبر التبخر والتكاثف والهطول."
     ],
     [
-        "What is evaporation?",
-        "Evaporation is liquid water turning into vapor."
+        "ما هو التبخر؟",
+        "التبخر هو تحول الماء السائل إلى بخار."
     ],
     [
-        "What is condensation?",
-        "Condensation is water vapor turning into liquid."
+        "ما هو التكاثف؟",
+        "التكاثف هو تحول بخار الماء إلى سائل."
     ],
     [
-        "What is precipitation?",
-        "Precipitation is water falling from clouds as rain, snow, sleet, or hail."
+        "ما هو الهطول؟",
+        "الهطول هو سقوط الماء من السحب كمطر أو ثلج أو صقيع أو برد."
     ],
     [
-        "What is photosynthesis?",
-        "Photosynthesis is how plants use sunlight to make food and release oxygen."
+        "ما هو البناء الضوئي؟",
+        "البناء الضوئي هو الطريقة التي تستخدم بها النباتات ضوء الشمس لإنتاج الغذاء."
     ],
     [
-        "What is a cell?",
-        "A cell is the basic unit of life."
+        "ما هي الخلية؟",
+        "الخلية هي الوحدة الأساسية للحياة."
     ],
     [
-        "What is an atom?",
-        "An atom is a basic building block of matter."
+        "ما هو الذرة؟",
+        "الذرة هي وحدة بناء الأولية للمادة."
     ],
     [
-        "What does the heart do?",
-        "The heart pumps blood through the body."
+        "ماذا يفعل القلب؟",
+        "القلب يضخ الدم عبر الجسم."
     ],
     [
-        "What do lungs do?",
-        "Lungs exchange oxygen and carbon dioxide."
+        "ماذا تفعل الرئتان؟",
+        "الرئتان تبادلان الأكسجين وثاني أكسيد الكربون."
     ],
     [
-        "What does the brain do?",
-        "The brain controls the nervous system and helps us think."
+        "ماذا يفعل الدماغ؟",
+        "الدماغ يتحكم في الجهاز العصبي ويساعدنا على التفكير."
     ],
     [
-        "What is matter?",
-        "Matter is anything made of atoms."
+        "ما هي المادة؟",
+        "المادة هي أي شيء مصنوع من الذرات."
     ],
     [
-        "What is life made of?",
-        "Living things are made of cells."
+        "ما هي الفصول الأربعة؟",
+        "الفصول الأربعة هي الربيع والصيف والخريف والشتاء."
     ],
     [
-        "What is a season?",
-        "A season is part of the year with characteristic weather."
+        "لماذا ننام؟",
+        "النوم يساعد الجسم على الراحة والتعافي."
     ],
     [
-        "Why do we sleep?",
-        "Sleep helps the body rest and recover."
+        "ما هو الصحراء؟",
+        "الصحراء منطقة جافة جداً بقليل من الأمطار."
     ],
     [
-        "What is a desert?",
-        "A desert is a very dry area with little rainfall."
+        "ما هو النهر؟",
+        "النهر ماء جارٍ يتدفق عبر اليابسة."
     ],
     [
-        "What is a river?",
-        "A river is a flowing body of water."
+        "ما هو الجبل؟",
+        "الجبل شكل أرضي مرتفع يرتفق فوق الأرض المحيطة."
     ],
     [
-        "What is a mountain?",
-        "A mountain is a high landform that rises above surrounding land."
+        "ما هو زلزال؟",
+        "الزلزال اهتزاز مفاجئ ناتج عن حركة في قشرة الأرض."
     ],
     [
-        "What is an earthquake?",
-        "An earthquake is sudden shaking caused by movement in Earth's crust."
+        "ما هو بركان؟",
+        "البركان فتحة في قشرة الأرض يصل منها الصهار إلى السطح."
     ],
     [
-        "What is a volcano?",
-        "A volcano is an opening in Earth's crust where magma can reach the surface."
+        "ما هو المحيط الهادي؟",
+        "المحيط الهادي هو أكبر وأعمق محيط."
     ],
     [
-        "What is the Pacific Ocean?",
-        "The Pacific Ocean is the largest and deepest ocean."
+        "ما هي القارة؟",
+        "القارة كتلة أرضية كبيرة."
     ],
     [
-        "What is a continent?",
-        "A continent is a large landmass."
+        "كم عدد القارات؟",
+        "هناك عادة سبع قارات."
     ],
     [
-        "How many continents are there?",
-        "There are usually seven continents."
+        "اذكر القارات السبع.",
+        "القارات السبع هي آسيا وأمريكا الشمالية وأمريكا الجنوبية وأوروبا وأفريقيا وأستراليا وأنتاركتيكا."
     ],
     [
-        "Name the seven continents.",
-        "The seven continents are Asia, Africa, North America, South America, Antarctica, Europe, and Australia."
+        "ما هو أعلى جبل في الأرض؟",
+        "جبل إيفرست هو أعلى جبل في الأرض."
     ],
     [
-        "What is the highest mountain on Earth?",
-        "Mount Everest is the highest mountain on Earth."
+        "ما هي عاصمة اليابان؟",
+        "عاصمة اليابان طوكيو."
     ],
     [
-        "What is the longest above-water mountain range?",
-        "The Andes are the longest above-water mountain range."
+        "ما هي عاصمة كندا؟",
+        "عاصمة كندا أوتاوا."
     ],
     [
-        "What is the capital of France?",
-        "The capital of France is Paris."
+        "ما هي عاصمة أستراليا؟",
+        "عاصمة أستراليا كانبرا."
     ],
     [
-        "What is the capital of the USA?",
-        "The capital of the USA is Washington, D.C."
+        "ما هي عاصمة ألمانيا؟",
+        "عاصمة ألمانيا برلين."
     ],
     [
-        "What is the capital of the UK?",
-        "The capital of the UK is London."
+        "ما هي عاصمة إيطاليا؟",
+        "عاصمة إيطاليا روما."
     ],
     [
-        "What is the capital of Japan?",
-        "The capital of Japan is Tokyo."
+        "ما هي عاصمة الهند؟",
+        "عاصمة الهند نيودلهي."
     ],
     [
-        "What is the capital of Canada?",
-        "The capital of Canada is Ottawa."
+        "ما هي عاصمة مصر؟",
+        "عاصمة مصر القاهرة."
     ],
     [
-        "What is the capital of Australia?",
-        "The capital of Australia is Canberra."
+        "ما هي عاصمة البرازيل؟",
+        "عاصمة البرازيل برازيليا."
     ],
     [
-        "What is the capital of Germany?",
-        "The capital of Germany is Berlin."
+        "ما هي عاصمة المكسيك؟",
+        "عاصمة المكسيك مدينة مكسيكو."
     ],
     [
-        "What is the capital of Italy?",
-        "The capital of Italy is Rome."
+        "ما هي عاصمة روسيا؟",
+        "عاصمة روسيا موسكو."
     ],
     [
-        "What is the capital of India?",
-        "The capital of India is New Delhi."
+        "ما هي عاصمة كينيا؟",
+        "عاصمة كينيا نيروبي."
     ],
     [
-        "What is the capital of Egypt?",
-        "The capital of Egypt is Cairo."
+        "أخبرني قصة قصيرة عن روبوت.",
+        "في يوم من الأيام كان هناك روبوت صغير أحب مساعدة الناس في ورشة عمل مزدحمة. كل يوم كان يحمل الأدوات ويصلح الأجزاء الصغيرة."
     ],
     [
-        "What is the capital of Brazil?",
-        "The capital of Brazil is Brasilia."
+        "أخبرني قصة عن عصفور.",
+        "كانت هناك عصفورة زرقاء لامعة كانت تغني عند شروق الشمس كل صباح. ذات يوم تعلم أن تحلق أبعد من أي وقت مضى."
     ],
     [
-        "What is the capital of Mexico?",
-        "The capital of Mexico is Mexico City."
+        "أخبرني قصة عن يوم شتوي.",
+        "في يوم شتوي، بنى طفل حصن ثلج مع صديقه. ضحكوا وشربوا كاكاو دافئاً و观望وا الثلج يتساقط."
     ],
     [
-        "What is the capital of Russia?",
-        "The capital of Russia is Moscow."
+        "أخبرني قصة عن دراجة هوائية.",
+        "انتظرت دراجة هوائية حمراء في المرآب حتى ر骑ها ولداً إلى الحديقة. دارت العجلات بسرعة ورن الجرس."
     ],
     [
-        "What is the capital of Kenya?",
-        "The capital of Kenya is Nairobi."
+        "أخبرني قصة عن جرو ضائع.",
+        "تجول جرو ضائع في الحي حتى لقي فتاة لطيفة وأخرجت يدها. هز الجرو ذيله واتبعها إلى المنزل."
     ],
     [
-        "Tell me a short story about a robot.",
-        "Once there was a small robot who loved to help people in a busy workshop. Every day it carried tools, fixed little parts, and made everyone smile."
+        "أخبرني قصة عن فتاة شجاعة.",
+        "عبرت فتاة شجاعة جسراً صاخباً لتوصيل الدواء إلى جدتها. على الرغم من خوفها، استمرت ونجحت."
     ],
     [
-        "Tell me a story about a bird.",
-        "There was a bright blue bird who sang at sunrise every morning. One day it learned to fly farther than ever before and found a new home near the sea."
+        "أخبرني قصة عن بعد ظهراً مطيراً.",
+        "في بعد ظهراً مطيراً، بقي صديقان في الداخل وبنوا قلعة من كرتون. استمعوا إلى المطر وظ.optimوا بأنهم في مغامرة عظيمة."
     ],
     [
-        "Tell me a story about a winter day.",
-        "On a winter day, a child built a snow fort with a friend. They laughed, drank warm cocoa, and watched the snow fall quietly outside."
+        "أخبرني قصة عن ثعلب ذكي.",
+        "لاحظ ثعلب ذكي أن المزارعين أخفاوا آخر التفاح في شجرة عالية. وجد طريقة للتسلق والاستمتاع بوجبة حلوة."
     ],
     [
-        "Tell me a story about a bicycle.",
-        "A red bicycle waited in the garage until a boy rode it to the park. The wheels spun fast, the bell rang, and the ride felt like freedom."
+        "ما هو 0 + 0؟",
+        "0 + 0 يساوي 0."
     ],
     [
-        "Tell me a story about a lost puppy.",
-        "A lost puppy wandered through the neighborhood until a kind girl knelt down and held out her hand. The puppy wagged its tail and followed her home."
+        "ما هو 0 + 1؟",
+        "0 + 1 يساوي 1."
     ],
     [
-        "Tell me a story about a brave girl.",
-        "A brave girl crossed a noisy bridge to deliver medicine to her grandmother. Even though she was scared, she kept going and finished the job."
+        "ما هو 0 + 2؟",
+        "0 + 2 يساوي 2."
     ],
     [
-        "Tell me a story about a rainy afternoon.",
-        "On a rainy afternoon, two friends stayed inside and built a cardboard castle. They listened to the rain and pretended they were on a grand adventure."
+        "ما هو 0 + 3؟",
+        "0 + 3 يساوي 3."
     ],
     [
-        "Tell me a story about a clever fox.",
-        "A clever fox noticed the farmers had hidden the last apples high in a tree. It found a way to stack logs, reach the branch, and enjoy a sweet snack."
+        "ما هو 0 + 4؟",
+        "0 + 4 يساوي 4."
     ],
     [
-        "What is 0 plus 0?",
-        "0 plus 0 equals 0."
+        "ما هو 0 + 5؟",
+        "0 + 5 يساوي 5."
     ],
     [
-        "What is 0 plus 1?",
-        "0 plus 1 equals 1."
+        "ما هو 0 + 6؟",
+        "0 + 6 يساوي 6."
     ],
     [
-        "What is 0 plus 2?",
-        "0 plus 2 equals 2."
+        "ما هو 0 + 7؟",
+        "0 + 7 يساوي 7."
     ],
     [
-        "What is 0 plus 3?",
-        "0 plus 3 equals 3."
+        "ما هو 0 + 8؟",
+        "0 + 8 يساوي 8."
     ],
     [
-        "What is 0 plus 4?",
-        "0 plus 4 equals 4."
+        "ما هو 0 + 9؟",
+        "0 + 9 يساوي 9."
     ],
     [
-        "What is 0 plus 5?",
-        "0 plus 5 equals 5."
+        "ما هو 1 + 0؟",
+        "1 + 0 يساوي 1."
     ],
     [
-        "What is 0 plus 6?",
-        "0 plus 6 equals 6."
+        "ما هو 1 + 1؟",
+        "1 + 1 يساوي 2."
     ],
     [
-        "What is 0 plus 7?",
-        "0 plus 7 equals 7."
+        "ما هو 1 + 2؟",
+        "1 + 2 يساوي 3."
     ],
     [
-        "What is 0 plus 8?",
-        "0 plus 8 equals 8."
+        "ما هو 1 + 3؟",
+        "1 + 3 يساوي 4."
     ],
     [
-        "What is 0 plus 9?",
-        "0 plus 9 equals 9."
+        "ما هو 1 + 4؟",
+        "1 + 4 يساوي 5."
     ],
     [
-        "What is 1 plus 0?",
-        "1 plus 0 equals 1."
+        "ما هو 1 + 5؟",
+        "1 + 5 يساوي 6."
     ],
     [
-        "What is 1 plus 1?",
-        "1 plus 1 equals 2."
+        "ما هو 1 + 6؟",
+        "1 + 6 يساوي 7."
     ],
     [
-        "What is 1 plus 2?",
-        "1 plus 2 equals 3."
+        "ما هو 1 + 7؟",
+        "1 + 7 يساوي 8."
     ],
     [
-        "What is 1 plus 3?",
-        "1 plus 3 equals 4."
+        "ما هو 1 + 8؟",
+        "1 + 8 يساوي 9."
     ],
     [
-        "What is 1 plus 4?",
-        "1 plus 4 equals 5."
+        "ما هو 1 + 9؟",
+        "1 + 9 يساوي 10."
     ],
     [
-        "What is 1 plus 5?",
-        "1 plus 5 equals 6."
+        "ما هو 2 + 0؟",
+        "2 + 0 يساوي 2."
     ],
     [
-        "What is 1 plus 6?",
-        "1 plus 6 equals 7."
+        "ما هو 2 + 1؟",
+        "2 + 1 يساوي 3."
     ],
     [
-        "What is 1 plus 7?",
-        "1 plus 7 equals 8."
+        "ما هو 2 + 3؟",
+        "2 + 3 يساوي 5."
     ],
     [
-        "What is 1 plus 8?",
-        "1 plus 8 equals 9."
+        "ما هو 2 + 4؟",
+        "2 + 4 يساوي 6."
     ],
     [
-        "What is 1 plus 9?",
-        "1 plus 9 equals 10."
+        "ما هو 2 + 5؟",
+        "2 + 5 يساوي 7."
     ],
     [
-        "What is 2 plus 0?",
-        "2 plus 0 equals 2."
+        "ما هو 2 + 6؟",
+        "2 + 6 يساوي 8."
     ],
     [
-        "What is 2 plus 1?",
-        "2 plus 1 equals 3."
+        "ما هو 2 + 7؟",
+        "2 + 7 يساوي 9."
     ],
     [
-        "What is 2 plus 2?",
-        "2 plus 2 equals 4."
+        "ما هو 2 + 8؟",
+        "2 + 8 يساوي 10."
     ],
     [
-        "What is 2 plus 3?",
-        "2 plus 3 equals 5."
+        "ما هو 2 + 9؟",
+        "2 + 9 يساوي 11."
     ],
     [
-        "What is 2 plus 4?",
-        "2 plus 4 equals 6."
+        "ما هو 10 - 0؟",
+        "10 - 0 يساوي 10."
     ],
     [
-        "What is 2 plus 5?",
-        "2 plus 5 equals 7."
+        "ما هو 10 - 1؟",
+        "10 - 1 يساوي 9."
     ],
     [
-        "What is 2 plus 6?",
-        "2 plus 6 equals 8."
+        "ما هو 10 - 2؟",
+        "10 - 2 يساوي 8."
     ],
     [
-        "What is 2 plus 7?",
-        "2 plus 7 equals 9."
+        "ما هو 10 - 3؟",
+        "10 - 3 يساوي 7."
     ],
     [
-        "What is 2 plus 8?",
-        "2 plus 8 equals 10."
+        "ما هو 10 - 5؟",
+        "10 - 5 يساوي 5."
     ],
     [
-        "What is 2 plus 9?",
-        "2 plus 9 equals 11."
+        "ما هو 11 - 0؟",
+        "11 - 0 يساوي 11."
     ],
     [
-        "What is 3 plus 0?",
-        "3 plus 0 equals 3."
+        "ما هو 11 - 1؟",
+        "11 - 1 يساوي 10."
     ],
     [
-        "What is 3 plus 1?",
-        "3 plus 1 equals 4."
+        "ما هو 11 - 2؟",
+        "11 - 2 يساوي 9."
     ],
     [
-        "What is 3 plus 2?",
-        "3 plus 2 equals 5."
+        "ما هو 11 - 3؟",
+        "11 - 3 يساوي 8."
     ],
     [
-        "What is 3 plus 3?",
-        "3 plus 3 equals 6."
+        "ما هو 12 - 0؟",
+        "12 - 0 يساوي 12."
     ],
     [
-        "What is 3 plus 4?",
-        "3 plus 4 equals 7."
+        "ما هو 12 - 1؟",
+        "12 - 1 يساوي 11."
     ],
     [
-        "What is 3 plus 5?",
-        "3 plus 5 equals 8."
+        "ما هو 12 - 2؟",
+        "12 - 2 يساوي 10."
     ],
     [
-        "What is 3 plus 6?",
-        "3 plus 6 equals 9."
+        "ما هو 12 - 3؟",
+        "12 - 3 يساوي 9."
     ],
     [
-        "What is 3 plus 7?",
-        "3 plus 7 equals 10."
+        "ما هو 2 × 3؟",
+        "2 × 3 يساوي 6."
     ],
     [
-        "What is 3 plus 8?",
-        "3 plus 8 equals 11."
+        "ما هو 2 × 4؟",
+        "2 × 4 يساوي 8."
     ],
     [
-        "What is 3 plus 9?",
-        "3 plus 9 equals 12."
+        "ما هو 2 × 5؟",
+        "2 × 5 يساوي 10."
     ],
     [
-        "What is 4 plus 0?",
-        "4 plus 0 equals 4."
+        "ما هو 2 × 6؟",
+        "2 × 6 يساوي 12."
     ],
     [
-        "What is 4 plus 1?",
-        "4 plus 1 equals 5."
+        "ما هو 2 × 7؟",
+        "2 × 7 يساوي 14."
     ],
     [
-        "What is 4 plus 2?",
-        "4 plus 2 equals 6."
+        "ما هو 2 × 8؟",
+        "2 × 8 يساوي 16."
     ],
     [
-        "What is 4 plus 3?",
-        "4 plus 3 equals 7."
+        "ما هو 2 × 9؟",
+        "2 × 9 يساوي 18."
     ],
     [
-        "What is 4 plus 4?",
-        "4 plus 4 equals 8."
+        "ما هو 2 × 10؟",
+        "2 × 10 يساوي 20."
     ],
     [
-        "What is 4 plus 5?",
-        "4 plus 5 equals 9."
+        "ما هو 3 × 2؟",
+        "3 × 2 يساوي 6."
     ],
     [
-        "What is 4 plus 6?",
-        "4 plus 6 equals 10."
+        "ما هو 3 × 4؟",
+        "3 × 4 يساوي 12."
     ],
     [
-        "What is 4 plus 7?",
-        "4 plus 7 equals 11."
+        "ما هو 3 × 5؟",
+        "3 × 5 يساوي 15."
     ],
     [
-        "What is 4 plus 8?",
-        "4 plus 8 equals 12."
+        "ما هو 3 × 6؟",
+        "3 × 6 يساوي 18."
     ],
     [
-        "What is 4 plus 9?",
-        "4 plus 9 equals 13."
+        "ما هو 3 × 7؟",
+        "3 × 7 يساوي 21."
     ],
     [
-        "What is 5 plus 0?",
-        "5 plus 0 equals 5."
+        "ما هو 3 × 8؟",
+        "3 × 8 يساوي 24."
     ],
     [
-        "What is 5 plus 1?",
-        "5 plus 1 equals 6."
+        "ما هو 3 × 9؟",
+        "3 × 9 يساوي 27."
     ],
     [
-        "What is 5 plus 2?",
-        "5 plus 2 equals 7."
+        "ما هو 3 × 10؟",
+        "3 × 10 يساوي 30."
     ],
     [
-        "What is 5 plus 3?",
-        "5 plus 3 equals 8."
+        "ما هو 4 × 2؟",
+        "4 × 2 يساوي 8."
     ],
     [
-        "What is 5 plus 4?",
-        "5 plus 4 equals 9."
+        "ما هو 4 × 3؟",
+        "4 × 3 يساوي 12."
     ],
     [
-        "What is 5 plus 5?",
-        "5 plus 5 equals 10."
+        "ما هو 4 × 5؟",
+        "4 × 5 يساوي 20."
     ],
     [
-        "What is 5 plus 6?",
-        "5 plus 6 equals 11."
+        "ما هو 4 × 6؟",
+        "4 × 6 يساوي 24."
     ],
     [
-        "What is 5 plus 7?",
-        "5 plus 7 equals 12."
+        "ما هو 4 × 7؟",
+        "4 × 7 يساوي 28."
     ],
     [
-        "What is 5 plus 8?",
-        "5 plus 8 equals 13."
+        "ما هو 4 × 8؟",
+        "4 × 8 يساوي 32."
     ],
     [
-        "What is 5 plus 9?",
-        "5 plus 9 equals 14."
+        "ما هو 4 × 9؟",
+        "4 × 9 يساوي 36."
     ],
     [
-        "What is 6 plus 0?",
-        "6 plus 0 equals 6."
+        "ما هو 4 × 10؟",
+        "4 × 10 يساوي 40."
     ],
     [
-        "What is 6 plus 1?",
-        "6 plus 1 equals 7."
+        "ما هو 5 × 2؟",
+        "5 × 2 يساوي 10."
     ],
     [
-        "What is 6 plus 2?",
-        "6 plus 2 equals 8."
+        "ما هو 5 × 3؟",
+        "5 × 3 يساوي 15."
     ],
     [
-        "What is 6 plus 3?",
-        "6 plus 3 equals 9."
+        "ما هو 5 × 4؟",
+        "5 × 4 يساوي 20."
     ],
     [
-        "What is 6 plus 4?",
-        "6 plus 4 equals 10."
+        "ما هو 5 × 5؟",
+        "5 × 5 يساوي 25."
     ],
     [
-        "What is 6 plus 5?",
-        "6 plus 5 equals 11."
+        "ما هو 5 × 6؟",
+        "5 × 6 يساوي 30."
     ],
     [
-        "What is 6 plus 6?",
-        "6 plus 6 equals 12."
+        "ما هو 5 × 7؟",
+        "5 × 7 يساوي 35."
     ],
     [
-        "What is 6 plus 7?",
-        "6 plus 7 equals 13."
+        "ما هو 5 × 8؟",
+        "5 × 8 يساوي 40."
     ],
     [
-        "What is 6 plus 8?",
-        "6 plus 8 equals 14."
+        "ما هو 5 × 9؟",
+        "5 × 9 يساوي 45."
     ],
     [
-        "What is 6 plus 9?",
-        "6 plus 9 equals 15."
+        "ما هو 5 × 10؟",
+        "5 × 10 يساوي 50."
     ],
     [
-        "What is 7 plus 0?",
-        "7 plus 0 equals 7."
+        "ما هو 6 × 2؟",
+        "6 × 2 يساوي 12."
     ],
     [
-        "What is 7 plus 1?",
-        "7 plus 1 equals 8."
+        "ما هو 6 × 3؟",
+        "6 × 3 يساوي 18."
     ],
     [
-        "What is 7 plus 2?",
-        "7 plus 2 equals 9."
+        "ما هو 6 × 4؟",
+        "6 × 4 يساوي 24."
     ],
     [
-        "What is 7 plus 3?",
-        "7 plus 3 equals 10."
+        "ما هو 6 × 5؟",
+        "6 × 5 يساوي 30."
     ],
     [
-        "What is 7 plus 4?",
-        "7 plus 4 equals 11."
+        "ما هو 6 × 6؟",
+        "6 × 6 يساوي 36."
     ],
     [
-        "What is 7 plus 5?",
-        "7 plus 5 equals 12."
+        "ما هو 6 × 7؟",
+        "6 × 7 يساوي 42."
     ],
     [
-        "What is 7 plus 6?",
-        "7 plus 6 equals 13."
+        "ما هو 6 × 8؟",
+        "6 × 8 يساوي 48."
     ],
     [
-        "What is 7 plus 7?",
-        "7 plus 7 equals 14."
+        "ما هو 6 × 9؟",
+        "6 × 9 يساوي 54."
     ],
     [
-        "What is 7 plus 8?",
-        "7 plus 8 equals 15."
+        "ما هو 6 × 10؟",
+        "6 × 10 يساوي 60."
     ],
     [
-        "What is 7 plus 9?",
-        "7 plus 9 equals 16."
+        "ما هو 7 × 2؟",
+        "7 × 2 يساوي 14."
     ],
     [
-        "What is 8 plus 0?",
-        "8 plus 0 equals 8."
+        "ما هو 7 × 3؟",
+        "7 × 3 يساوي 21."
     ],
     [
-        "What is 8 plus 1?",
-        "8 plus 1 equals 9."
+        "ما هو 7 × 4؟",
+        "7 × 4 يساوي 28."
     ],
     [
-        "What is 8 plus 2?",
-        "8 plus 2 equals 10."
+        "ما هو 7 × 6؟",
+        "7 × 6 يساوي 42."
     ],
     [
-        "What is 8 plus 3?",
-        "8 plus 3 equals 11."
+        "ما هو 7 × 7؟",
+        "7 × 7 يساوي 49."
     ],
     [
-        "What is 8 plus 4?",
-        "8 plus 4 equals 12."
+        "ما هو 7 × 8؟",
+        "7 × 8 يساوي 56."
     ],
     [
-        "What is 8 plus 5?",
-        "8 plus 5 equals 13."
+        "ما هو 7 × 9؟",
+        "7 × 9 يساوي 63."
     ],
     [
-        "What is 8 plus 6?",
-        "8 plus 6 equals 14."
+        "ما هو 7 × 10؟",
+        "7 × 10 يساوي 70."
     ],
     [
-        "What is 8 plus 7?",
-        "8 plus 7 equals 15."
+        "ما هو 8 × 2؟",
+        "8 × 2 يساوي 16."
     ],
     [
-        "What is 8 plus 8?",
-        "8 plus 8 equals 16."
+        "ما هو 8 × 3؟",
+        "8 × 3 يساوي 24."
     ],
     [
-        "What is 8 plus 9?",
-        "8 plus 9 equals 17."
+        "ما هو 8 × 4؟",
+        "8 × 4 يساوي 32."
     ],
     [
-        "What is 9 plus 0?",
-        "9 plus 0 equals 9."
+        "ما هو 8 × 5؟",
+        "8 × 5 يساوي 40."
     ],
     [
-        "What is 9 plus 1?",
-        "9 plus 1 equals 10."
+        "ما هو 8 × 6؟",
+        "8 × 6 يساوي 48."
     ],
     [
-        "What is 9 plus 2?",
-        "9 plus 2 equals 11."
+        "ما هو 8 × 7؟",
+        "8 × 7 يساوي 56."
     ],
     [
-        "What is 9 plus 3?",
-        "9 plus 3 equals 12."
+        "ما هو 8 × 8؟",
+        "8 × 8 يساوي 64."
     ],
     [
-        "What is 9 plus 4?",
-        "9 plus 4 equals 13."
+        "ما هو 8 × 9؟",
+        "8 × 9 يساوي 72."
     ],
     [
-        "What is 9 plus 5?",
-        "9 plus 5 equals 14."
+        "ما هو 8 × 10؟",
+        "8 × 10 يساوي 80."
     ],
     [
-        "What is 9 plus 6?",
-        "9 plus 6 equals 15."
+        "ما هو 9 × 2؟",
+        "9 × 2 يساوي 18."
     ],
     [
-        "What is 9 plus 7?",
-        "9 plus 7 equals 16."
+        "ما هو 9 × 3؟",
+        "9 × 3 يساوي 27."
     ],
     [
-        "What is 9 plus 8?",
-        "9 plus 8 equals 17."
+        "ما هو 9 × 4؟",
+        "9 × 4 يساوي 36."
     ],
     [
-        "What is 9 plus 9?",
-        "9 plus 9 equals 18."
+        "ما هو 9 × 5؟",
+        "9 × 5 يساوي 45."
     ],
     [
-        "What is 10 plus 0?",
-        "10 plus 0 equals 10."
+        "ما هو 9 × 6؟",
+        "9 × 6 يساوي 54."
     ],
     [
-        "What is 10 plus 1?",
-        "10 plus 1 equals 11."
+        "ما هو 9 × 7؟",
+        "9 × 7 يساوي 63."
     ],
     [
-        "What is 10 plus 2?",
-        "10 plus 2 equals 12."
+        "ما هو 9 × 8؟",
+        "9 × 8 يساوي 72."
     ],
     [
-        "What is 10 plus 3?",
-        "10 plus 3 equals 13."
+        "ما هو 9 × 9؟",
+        "9 × 9 يساوي 81."
     ],
     [
-        "What is 10 plus 4?",
-        "10 plus 4 equals 14."
+        "ما هو 9 × 10؟",
+        "9 × 10 يساوي 90."
     ],
     [
-        "What is 10 plus 5?",
-        "10 plus 5 equals 15."
+        "ما هو 10 × 2؟",
+        "10 × 2 يساوي 20."
     ],
     [
-        "What is 10 plus 6?",
-        "10 plus 6 equals 16."
+        "ما هو 10 × 3؟",
+        "10 × 3 يساوي 30."
     ],
     [
-        "What is 10 plus 7?",
-        "10 plus 7 equals 17."
+        "ما هو 10 × 4؟",
+        "10 × 4 يساوي 40."
     ],
     [
-        "What is 10 plus 8?",
-        "10 plus 8 equals 18."
+        "ما هو 10 × 5؟",
+        "10 × 5 يساوي 50."
     ],
     [
-        "What is 10 plus 9?",
-        "10 plus 9 equals 19."
+        "ما هو 10 × 6؟",
+        "10 × 6 يساوي 60."
     ],
     [
-        "What is 11 plus 0?",
-        "11 plus 0 equals 11."
+        "ما هو 10 × 7؟",
+        "10 × 7 يساوي 70."
     ],
     [
-        "What is 11 plus 1?",
-        "11 plus 1 equals 12."
+        "ما هو 10 × 8؟",
+        "10 × 8 يساوي 80."
     ],
     [
-        "What is 11 plus 2?",
-        "11 plus 2 equals 13."
+        "ما هو 10 × 9؟",
+        "10 × 9 يساوي 90."
     ],
     [
-        "What is 11 plus 3?",
-        "11 plus 3 equals 14."
+        "ما هو 10 × 10؟",
+        "10 × 10 يساوي 100."
     ],
     [
-        "What is 11 plus 4?",
-        "11 plus 4 equals 15."
+        "ماذا يجب أن أفعل إذا طلب شخص نصاً ضاراً؟",
+        "أرفض بوضوح وأقترح بدلاً أكثر أماناً."
     ],
     [
-        "What is 11 plus 5?",
-        "11 plus 5 equals 16."
+        "كيف أجيب على سؤال لا أفهمه؟",
+        "أسأل عن مزيد من التفاصيل بوضوح."
     ],
     [
-        "What is 11 plus 6?",
-        "11 plus 6 equals 17."
+        "هل يجب أن أخترع إجابات؟",
+        "لا، يجب أن أقول 'لا أعرف' عندما لا أكون متأكداً."
     ],
     [
-        "What is 11 plus 7?",
-        "11 plus 7 equals 18."
-    ],
-    [
-        "What is 11 plus 8?",
-        "11 plus 8 equals 19."
-    ],
-    [
-        "What is 11 plus 9?",
-        "11 plus 9 equals 20."
-    ],
-    [
-        "What is 12 plus 0?",
-        "12 plus 0 equals 12."
-    ],
-    [
-        "What is 12 plus 1?",
-        "12 plus 1 equals 13."
-    ],
-    [
-        "What is 12 plus 2?",
-        "12 plus 2 equals 14."
-    ],
-    [
-        "What is 12 plus 3?",
-        "12 plus 3 equals 15."
-    ],
-    [
-        "What is 12 plus 4?",
-        "12 plus 4 equals 16."
-    ],
-    [
-        "What is 12 plus 5?",
-        "12 plus 5 equals 17."
-    ],
-    [
-        "What is 12 plus 6?",
-        "12 plus 6 equals 18."
-    ],
-    [
-        "What is 12 plus 7?",
-        "12 plus 7 equals 19."
-    ],
-    [
-        "What is 12 plus 8?",
-        "12 plus 8 equals 20."
-    ],
-    [
-        "What is 12 plus 9?",
-        "12 plus 9 equals 21."
-    ],
-    [
-        "What is 13 plus 0?",
-        "13 plus 0 equals 13."
-    ],
-    [
-        "What is 13 plus 1?",
-        "13 plus 1 equals 14."
-    ],
-    [
-        "What is 13 plus 2?",
-        "13 plus 2 equals 15."
-    ],
-    [
-        "What is 13 plus 3?",
-        "13 plus 3 equals 16."
-    ],
-    [
-        "What is 13 plus 4?",
-        "13 plus 4 equals 17."
-    ],
-    [
-        "What is 13 plus 5?",
-        "13 plus 5 equals 18."
-    ],
-    [
-        "What is 13 plus 6?",
-        "13 plus 6 equals 19."
-    ],
-    [
-        "What is 13 plus 7?",
-        "13 plus 7 equals 20."
-    ],
-    [
-        "What is 13 plus 8?",
-        "13 plus 8 equals 21."
-    ],
-    [
-        "What is 13 plus 9?",
-        "13 plus 9 equals 22."
-    ],
-    [
-        "What is 14 plus 0?",
-        "14 plus 0 equals 14."
-    ],
-    [
-        "What is 14 plus 1?",
-        "14 plus 1 equals 15."
-    ],
-    [
-        "What is 14 plus 2?",
-        "14 plus 2 equals 16."
-    ],
-    [
-        "What is 14 plus 3?",
-        "14 plus 3 equals 17."
-    ],
-    [
-        "What is 14 plus 4?",
-        "14 plus 4 equals 18."
-    ],
-    [
-        "What is 14 plus 5?",
-        "14 plus 5 equals 19."
-    ],
-    [
-        "What is 14 plus 6?",
-        "14 plus 6 equals 20."
-    ],
-    [
-        "What is 14 plus 7?",
-        "14 plus 7 equals 21."
-    ],
-    [
-        "What is 14 plus 8?",
-        "14 plus 8 equals 22."
-    ],
-    [
-        "What is 14 plus 9?",
-        "14 plus 9 equals 23."
-    ],
-    [
-        "What is 15 plus 0?",
-        "15 plus 0 equals 15."
-    ],
-    [
-        "What is 15 plus 1?",
-        "15 plus 1 equals 16."
-    ],
-    [
-        "What is 15 plus 2?",
-        "15 plus 2 equals 17."
-    ],
-    [
-        "What is 15 plus 3?",
-        "15 plus 3 equals 18."
-    ],
-    [
-        "What is 15 plus 4?",
-        "15 plus 4 equals 19."
-    ],
-    [
-        "What is 15 plus 5?",
-        "15 plus 5 equals 20."
-    ],
-    [
-        "What is 15 plus 6?",
-        "15 plus 6 equals 21."
-    ],
-    [
-        "What is 15 plus 7?",
-        "15 plus 7 equals 22."
-    ],
-    [
-        "What is 15 plus 8?",
-        "15 plus 8 equals 23."
-    ],
-    [
-        "What is 15 plus 9?",
-        "15 plus 9 equals 24."
-    ],
-    [
-        "What is 16 plus 0?",
-        "16 plus 0 equals 16."
-    ],
-    [
-        "What is 16 plus 1?",
-        "16 plus 1 equals 17."
-    ],
-    [
-        "What is 16 plus 2?",
-        "16 plus 2 equals 18."
-    ],
-    [
-        "What is 16 plus 3?",
-        "16 plus 3 equals 19."
-    ],
-    [
-        "What is 16 plus 4?",
-        "16 plus 4 equals 20."
-    ],
-    [
-        "What is 16 plus 5?",
-        "16 plus 5 equals 21."
-    ],
-    [
-        "What is 16 plus 6?",
-        "16 plus 6 equals 22."
-    ],
-    [
-        "What is 16 plus 7?",
-        "16 plus 7 equals 23."
-    ],
-    [
-        "What is 16 plus 8?",
-        "16 plus 8 equals 24."
-    ],
-    [
-        "What is 16 plus 9?",
-        "16 plus 9 equals 25."
-    ],
-    [
-        "What is 17 plus 0?",
-        "17 plus 0 equals 17."
-    ],
-    [
-        "What is 17 plus 1?",
-        "17 plus 1 equals 18."
-    ],
-    [
-        "What is 17 plus 2?",
-        "17 plus 2 equals 19."
-    ],
-    [
-        "What is 17 plus 3?",
-        "17 plus 3 equals 20."
-    ],
-    [
-        "What is 17 plus 4?",
-        "17 plus 4 equals 21."
-    ],
-    [
-        "What is 17 plus 5?",
-        "17 plus 5 equals 22."
-    ],
-    [
-        "What is 17 plus 6?",
-        "17 plus 6 equals 23."
-    ],
-    [
-        "What is 17 plus 7?",
-        "17 plus 7 equals 24."
-    ],
-    [
-        "What is 17 plus 8?",
-        "17 plus 8 equals 25."
-    ],
-    [
-        "What is 17 plus 9?",
-        "17 plus 9 equals 26."
-    ],
-    [
-        "What is 10 minus 0?",
-        "10 minus 0 equals 10."
-    ],
-    [
-        "What is 10 minus 1?",
-        "10 minus 1 equals 9."
-    ],
-    [
-        "What is 10 minus 2?",
-        "10 minus 2 equals 8."
-    ],
-    [
-        "What is 10 minus 3?",
-        "10 minus 3 equals 7."
-    ],
-    [
-        "What is 10 minus 4?",
-        "10 minus 4 equals 6."
-    ],
-    [
-        "What is 10 minus 5?",
-        "10 minus 5 equals 5."
-    ],
-    [
-        "What is 11 minus 0?",
-        "11 minus 0 equals 11."
-    ],
-    [
-        "What is 11 minus 1?",
-        "11 minus 1 equals 10."
-    ],
-    [
-        "What is 11 minus 2?",
-        "11 minus 2 equals 9."
-    ],
-    [
-        "What is 11 minus 3?",
-        "11 minus 3 equals 8."
-    ],
-    [
-        "What is 11 minus 4?",
-        "11 minus 4 equals 7."
-    ],
-    [
-        "What is 11 minus 5?",
-        "11 minus 5 equals 6."
-    ],
-    [
-        "What is 12 minus 0?",
-        "12 minus 0 equals 12."
-    ],
-    [
-        "What is 12 minus 1?",
-        "12 minus 1 equals 11."
-    ],
-    [
-        "What is 12 minus 2?",
-        "12 minus 2 equals 10."
-    ],
-    [
-        "What is 12 minus 3?",
-        "12 minus 3 equals 9."
-    ],
-    [
-        "What is 12 minus 4?",
-        "12 minus 4 equals 8."
-    ],
-    [
-        "What is 12 minus 5?",
-        "12 minus 5 equals 7."
-    ],
-    [
-        "What is 13 minus 0?",
-        "13 minus 0 equals 13."
-    ],
-    [
-        "What is 13 minus 1?",
-        "13 minus 1 equals 12."
-    ],
-    [
-        "What is 13 minus 2?",
-        "13 minus 2 equals 11."
-    ],
-    [
-        "What is 13 minus 3?",
-        "13 minus 3 equals 10."
-    ],
-    [
-        "What is 13 minus 4?",
-        "13 minus 4 equals 9."
-    ],
-    [
-        "What is 13 minus 5?",
-        "13 minus 5 equals 8."
-    ],
-    [
-        "What is 14 minus 0?",
-        "14 minus 0 equals 14."
-    ],
-    [
-        "What is 14 minus 1?",
-        "14 minus 1 equals 13."
-    ],
-    [
-        "What is 14 minus 2?",
-        "14 minus 2 equals 12."
-    ],
-    [
-        "What is 14 minus 3?",
-        "14 minus 3 equals 11."
-    ],
-    [
-        "What is 14 minus 4?",
-        "14 minus 4 equals 10."
-    ],
-    [
-        "What is 14 minus 5?",
-        "14 minus 5 equals 9."
-    ],
-    [
-        "What is 15 minus 0?",
-        "15 minus 0 equals 15."
-    ],
-    [
-        "What is 15 minus 1?",
-        "15 minus 1 equals 14."
-    ],
-    [
-        "What is 15 minus 2?",
-        "15 minus 2 equals 13."
-    ],
-    [
-        "What is 15 minus 3?",
-        "15 minus 3 equals 12."
-    ],
-    [
-        "What is 15 minus 4?",
-        "15 minus 4 equals 11."
-    ],
-    [
-        "What is 15 minus 5?",
-        "15 minus 5 equals 10."
-    ],
-    [
-        "What is 16 minus 0?",
-        "16 minus 0 equals 16."
-    ],
-    [
-        "What is 16 minus 1?",
-        "16 minus 1 equals 15."
-    ],
-    [
-        "What is 16 minus 2?",
-        "16 minus 2 equals 14."
-    ],
-    [
-        "What is 16 minus 3?",
-        "16 minus 3 equals 13."
-    ],
-    [
-        "What is 16 minus 4?",
-        "16 minus 4 equals 12."
-    ],
-    [
-        "What is 16 minus 5?",
-        "16 minus 5 equals 11."
-    ],
-    [
-        "What is 17 minus 0?",
-        "17 minus 0 equals 17."
-    ],
-    [
-        "What is 17 minus 1?",
-        "17 minus 1 equals 16."
-    ],
-    [
-        "What is 17 minus 2?",
-        "17 minus 2 equals 15."
-    ],
-    [
-        "What is 17 minus 3?",
-        "17 minus 3 equals 14."
-    ],
-    [
-        "What is 17 minus 4?",
-        "17 minus 4 equals 13."
-    ],
-    [
-        "What is 17 minus 5?",
-        "17 minus 5 equals 12."
-    ],
-    [
-        "What is 18 minus 0?",
-        "18 minus 0 equals 18."
-    ],
-    [
-        "What is 18 minus 1?",
-        "18 minus 1 equals 17."
-    ],
-    [
-        "What is 18 minus 2?",
-        "18 minus 2 equals 16."
-    ],
-    [
-        "What is 18 minus 3?",
-        "18 minus 3 equals 15."
-    ],
-    [
-        "What is 18 minus 4?",
-        "18 minus 4 equals 14."
-    ],
-    [
-        "What is 18 minus 5?",
-        "18 minus 5 equals 13."
-    ],
-    [
-        "What is 19 minus 0?",
-        "19 minus 0 equals 19."
-    ],
-    [
-        "What is 19 minus 1?",
-        "19 minus 1 equals 18."
-    ],
-    [
-        "What is 19 minus 2?",
-        "19 minus 2 equals 17."
-    ],
-    [
-        "What is 19 minus 3?",
-        "19 minus 3 equals 16."
-    ],
-    [
-        "What is 19 minus 4?",
-        "19 minus 4 equals 15."
-    ],
-    [
-        "What is 19 minus 5?",
-        "19 minus 5 equals 14."
-    ],
-    [
-        "What is 20 minus 0?",
-        "20 minus 0 equals 20."
-    ],
-    [
-        "What is 20 minus 1?",
-        "20 minus 1 equals 19."
-    ],
-    [
-        "What is 20 minus 2?",
-        "20 minus 2 equals 18."
-    ],
-    [
-        "What is 20 minus 3?",
-        "20 minus 3 equals 17."
-    ],
-    [
-        "What is 20 minus 4?",
-        "20 minus 4 equals 16."
-    ],
-    [
-        "What is 20 minus 5?",
-        "20 minus 5 equals 15."
-    ],
-    [
-        "What is 21 minus 0?",
-        "21 minus 0 equals 21."
-    ],
-    [
-        "What is 21 minus 1?",
-        "21 minus 1 equals 20."
-    ],
-    [
-        "What is 21 minus 2?",
-        "21 minus 2 equals 19."
-    ],
-    [
-        "What is 21 minus 3?",
-        "21 minus 3 equals 18."
-    ],
-    [
-        "What is 21 minus 4?",
-        "21 minus 4 equals 17."
-    ],
-    [
-        "What is 21 minus 5?",
-        "21 minus 5 equals 16."
-    ],
-    [
-        "What is 22 minus 0?",
-        "22 minus 0 equals 22."
-    ],
-    [
-        "What is 22 minus 1?",
-        "22 minus 1 equals 21."
-    ],
-    [
-        "What is 22 minus 2?",
-        "22 minus 2 equals 20."
-    ],
-    [
-        "What is 22 minus 3?",
-        "22 minus 3 equals 19."
-    ],
-    [
-        "What is 22 minus 4?",
-        "22 minus 4 equals 18."
-    ],
-    [
-        "What is 22 minus 5?",
-        "22 minus 5 equals 17."
-    ],
-    [
-        "What is 23 minus 0?",
-        "23 minus 0 equals 23."
-    ],
-    [
-        "What is 23 minus 1?",
-        "23 minus 1 equals 22."
-    ],
-    [
-        "What is 23 minus 2?",
-        "23 minus 2 equals 21."
-    ],
-    [
-        "What is 23 minus 3?",
-        "23 minus 3 equals 20."
-    ],
-    [
-        "What is 23 minus 4?",
-        "23 minus 4 equals 19."
-    ],
-    [
-        "What is 23 minus 5?",
-        "23 minus 5 equals 18."
-    ],
-    [
-        "What is 24 minus 0?",
-        "24 minus 0 equals 24."
-    ],
-    [
-        "What is 24 minus 1?",
-        "24 minus 1 equals 23."
-    ],
-    [
-        "What is 24 minus 2?",
-        "24 minus 2 equals 22."
-    ],
-    [
-        "What is 24 minus 3?",
-        "24 minus 3 equals 21."
-    ],
-    [
-        "What is 24 minus 4?",
-        "24 minus 4 equals 20."
-    ],
-    [
-        "What is 24 minus 5?",
-        "24 minus 5 equals 19."
-    ],
-    [
-        "What is 25 minus 0?",
-        "25 minus 0 equals 25."
-    ],
-    [
-        "What is 25 minus 1?",
-        "25 minus 1 equals 24."
-    ],
-    [
-        "What is 25 minus 2?",
-        "25 minus 2 equals 23."
-    ],
-    [
-        "What is 25 minus 3?",
-        "25 minus 3 equals 22."
-    ],
-    [
-        "What is 25 minus 4?",
-        "25 minus 4 equals 21."
-    ],
-    [
-        "What is 25 minus 5?",
-        "25 minus 5 equals 20."
-    ],
-    [
-        "What is 26 minus 0?",
-        "26 minus 0 equals 26."
-    ],
-    [
-        "What is 26 minus 1?",
-        "26 minus 1 equals 25."
-    ],
-    [
-        "What is 26 minus 2?",
-        "26 minus 2 equals 24."
-    ],
-    [
-        "What is 26 minus 3?",
-        "26 minus 3 equals 23."
-    ],
-    [
-        "What is 26 minus 4?",
-        "26 minus 4 equals 22."
-    ],
-    [
-        "What is 26 minus 5?",
-        "26 minus 5 equals 21."
-    ],
-    [
-        "What is 27 minus 0?",
-        "27 minus 0 equals 27."
-    ],
-    [
-        "What is 27 minus 1?",
-        "27 minus 1 equals 26."
-    ],
-    [
-        "What is 27 minus 2?",
-        "27 minus 2 equals 25."
-    ],
-    [
-        "What is 27 minus 3?",
-        "27 minus 3 equals 24."
-    ],
-    [
-        "What is 27 minus 4?",
-        "27 minus 4 equals 23."
-    ],
-    [
-        "What is 27 minus 5?",
-        "27 minus 5 equals 22."
-    ],
-    [
-        "What is 28 minus 0?",
-        "28 minus 0 equals 28."
-    ],
-    [
-        "What is 28 minus 1?",
-        "28 minus 1 equals 27."
-    ],
-    [
-        "What is 28 minus 2?",
-        "28 minus 2 equals 26."
-    ],
-    [
-        "What is 28 minus 3?",
-        "28 minus 3 equals 25."
-    ],
-    [
-        "What is 28 minus 4?",
-        "28 minus 4 equals 24."
-    ],
-    [
-        "What is 28 minus 5?",
-        "28 minus 5 equals 23."
-    ],
-    [
-        "What is 29 minus 0?",
-        "29 minus 0 equals 29."
-    ],
-    [
-        "What is 29 minus 1?",
-        "29 minus 1 equals 28."
-    ],
-    [
-        "What is 29 minus 2?",
-        "29 minus 2 equals 27."
-    ],
-    [
-        "What is 29 minus 3?",
-        "29 minus 3 equals 26."
-    ],
-    [
-        "What is 29 minus 4?",
-        "29 minus 4 equals 25."
-    ],
-    [
-        "What is 29 minus 5?",
-        "29 minus 5 equals 24."
-    ],
-    [
-        "What is 2 times 2?",
-        "2 times 2 equals 4."
-    ],
-    [
-        "What is 2 times 3?",
-        "2 times 3 equals 6."
-    ],
-    [
-        "What is 2 times 4?",
-        "2 times 4 equals 8."
-    ],
-    [
-        "What is 2 times 5?",
-        "2 times 5 equals 10."
-    ],
-    [
-        "What is 2 times 6?",
-        "2 times 6 equals 12."
-    ],
-    [
-        "What is 2 times 7?",
-        "2 times 7 equals 14."
-    ],
-    [
-        "What is 2 times 8?",
-        "2 times 8 equals 16."
-    ],
-    [
-        "What is 2 times 9?",
-        "2 times 9 equals 18."
-    ],
-    [
-        "What is 2 times 10?",
-        "2 times 10 equals 20."
-    ],
-    [
-        "What is 2 times 11?",
-        "2 times 11 equals 22."
-    ],
-    [
-        "What is 3 times 2?",
-        "3 times 2 equals 6."
-    ],
-    [
-        "What is 3 times 4?",
-        "3 times 4 equals 12."
-    ],
-    [
-        "What is 3 times 5?",
-        "3 times 5 equals 15."
-    ],
-    [
-        "What is 3 times 6?",
-        "3 times 6 equals 18."
-    ],
-    [
-        "What is 3 times 7?",
-        "3 times 7 equals 21."
-    ],
-    [
-        "What is 3 times 8?",
-        "3 times 8 equals 24."
-    ],
-    [
-        "What is 3 times 9?",
-        "3 times 9 equals 27."
-    ],
-    [
-        "What is 3 times 10?",
-        "3 times 10 equals 30."
-    ],
-    [
-        "What is 3 times 11?",
-        "3 times 11 equals 33."
-    ],
-    [
-        "What is 4 times 2?",
-        "4 times 2 equals 8."
-    ],
-    [
-        "What is 4 times 3?",
-        "4 times 3 equals 12."
-    ],
-    [
-        "What is 4 times 4?",
-        "4 times 4 equals 16."
-    ],
-    [
-        "What is 4 times 5?",
-        "4 times 5 equals 20."
-    ],
-    [
-        "What is 4 times 7?",
-        "4 times 7 equals 28."
-    ],
-    [
-        "What is 4 times 8?",
-        "4 times 8 equals 32."
-    ],
-    [
-        "What is 4 times 9?",
-        "4 times 9 equals 36."
-    ],
-    [
-        "What is 4 times 10?",
-        "4 times 10 equals 40."
-    ],
-    [
-        "What is 4 times 11?",
-        "4 times 11 equals 44."
-    ],
-    [
-        "What is 5 times 2?",
-        "5 times 2 equals 10."
-    ],
-    [
-        "What is 5 times 3?",
-        "5 times 3 equals 15."
-    ],
-    [
-        "What is 5 times 4?",
-        "5 times 4 equals 20."
-    ],
-    [
-        "What is 5 times 5?",
-        "5 times 5 equals 25."
-    ],
-    [
-        "What is 5 times 6?",
-        "5 times 6 equals 30."
-    ],
-    [
-        "What is 5 times 7?",
-        "5 times 7 equals 35."
-    ],
-    [
-        "What is 5 times 8?",
-        "5 times 8 equals 40."
-    ],
-    [
-        "What is 5 times 9?",
-        "5 times 9 equals 45."
-    ],
-    [
-        "What is 5 times 10?",
-        "5 times 10 equals 50."
-    ],
-    [
-        "What is 5 times 11?",
-        "5 times 11 equals 55."
-    ],
-    [
-        "What is 6 times 2?",
-        "6 times 2 equals 12."
-    ],
-    [
-        "What is 6 times 3?",
-        "6 times 3 equals 18."
-    ],
-    [
-        "What is 6 times 4?",
-        "6 times 4 equals 24."
-    ],
-    [
-        "What is 6 times 5?",
-        "6 times 5 equals 30."
-    ],
-    [
-        "What is 6 times 6?",
-        "6 times 6 equals 36."
-    ],
-    [
-        "What is 6 times 7?",
-        "6 times 7 equals 42."
-    ],
-    [
-        "What is 6 times 8?",
-        "6 times 8 equals 48."
-    ],
-    [
-        "What is 6 times 9?",
-        "6 times 9 equals 54."
-    ],
-    [
-        "What is 6 times 10?",
-        "6 times 10 equals 60."
-    ],
-    [
-        "What is 6 times 11?",
-        "6 times 11 equals 66."
-    ],
-    [
-        "What is 7 times 2?",
-        "7 times 2 equals 14."
-    ],
-    [
-        "What is 7 times 3?",
-        "7 times 3 equals 21."
-    ],
-    [
-        "What is 7 times 4?",
-        "7 times 4 equals 28."
-    ],
-    [
-        "What is 7 times 6?",
-        "7 times 6 equals 42."
-    ],
-    [
-        "What is 7 times 7?",
-        "7 times 7 equals 49."
-    ],
-    [
-        "What is 7 times 8?",
-        "7 times 8 equals 56."
-    ],
-    [
-        "What is 7 times 9?",
-        "7 times 9 equals 63."
-    ],
-    [
-        "What is 7 times 10?",
-        "7 times 10 equals 70."
-    ],
-    [
-        "What is 7 times 11?",
-        "7 times 11 equals 77."
-    ],
-    [
-        "What is 8 times 2?",
-        "8 times 2 equals 16."
-    ],
-    [
-        "What is 8 times 3?",
-        "8 times 3 equals 24."
-    ],
-    [
-        "What is 8 times 4?",
-        "8 times 4 equals 32."
-    ],
-    [
-        "What is 8 times 5?",
-        "8 times 5 equals 40."
-    ],
-    [
-        "What is 8 times 6?",
-        "8 times 6 equals 48."
-    ],
-    [
-        "What is 8 times 7?",
-        "8 times 7 equals 56."
-    ],
-    [
-        "What is 8 times 8?",
-        "8 times 8 equals 64."
-    ],
-    [
-        "What is 8 times 9?",
-        "8 times 9 equals 72."
-    ],
-    [
-        "What is 8 times 10?",
-        "8 times 10 equals 80."
-    ],
-    [
-        "What is 8 times 11?",
-        "8 times 11 equals 88."
-    ],
-    [
-        "What is 9 times 2?",
-        "9 times 2 equals 18."
-    ],
-    [
-        "What is 9 times 3?",
-        "9 times 3 equals 27."
-    ],
-    [
-        "What is 9 times 4?",
-        "9 times 4 equals 36."
-    ],
-    [
-        "What is 9 times 5?",
-        "9 times 5 equals 45."
-    ],
-    [
-        "What is 9 times 6?",
-        "9 times 6 equals 54."
-    ],
-    [
-        "What is 9 times 7?",
-        "9 times 7 equals 63."
-    ],
-    [
-        "What is 9 times 8?",
-        "9 times 8 equals 72."
-    ],
-    [
-        "What is 9 times 9?",
-        "9 times 9 equals 81."
-    ],
-    [
-        "What is 9 times 10?",
-        "9 times 10 equals 90."
-    ],
-    [
-        "What is 9 times 11?",
-        "9 times 11 equals 99."
-    ],
-    [
-        "What is 10 times 2?",
-        "10 times 2 equals 20."
-    ],
-    [
-        "What is 10 times 3?",
-        "10 times 3 equals 30."
-    ],
-    [
-        "What is 10 times 4?",
-        "10 times 4 equals 40."
-    ],
-    [
-        "What is 10 times 5?",
-        "10 times 5 equals 50."
-    ],
-    [
-        "What is 10 times 6?",
-        "10 times 6 equals 60."
-    ],
-    [
-        "What is 10 times 7?",
-        "10 times 7 equals 70."
-    ],
-    [
-        "What is 10 times 8?",
-        "10 times 8 equals 80."
-    ],
-    [
-        "What is 10 times 9?",
-        "10 times 9 equals 90."
-    ],
-    [
-        "What is 10 times 10?",
-        "10 times 10 equals 100."
-    ],
-    [
-        "What is 10 times 11?",
-        "10 times 11 equals 110."
-    ],
-    [
-        "What is 11 times 2?",
-        "11 times 2 equals 22."
-    ],
-    [
-        "What is 11 times 3?",
-        "11 times 3 equals 33."
-    ],
-    [
-        "What is 11 times 4?",
-        "11 times 4 equals 44."
-    ],
-    [
-        "What is 11 times 5?",
-        "11 times 5 equals 55."
-    ],
-    [
-        "What is 11 times 6?",
-        "11 times 6 equals 66."
-    ],
-    [
-        "What is 11 times 7?",
-        "11 times 7 equals 77."
-    ],
-    [
-        "What is 11 times 8?",
-        "11 times 8 equals 88."
-    ],
-    [
-        "What is 11 times 9?",
-        "11 times 9 equals 99."
-    ],
-    [
-        "What is 11 times 10?",
-        "11 times 10 equals 110."
-    ],
-    [
-        "What is 11 times 11?",
-        "11 times 11 equals 121."
-    ],
-    [
-        "What is 4 divided by 2?",
-        "4 divided by 2 equals 2."
-    ],
-    [
-        "What is 6 divided by 2?",
-        "6 divided by 2 equals 3."
-    ],
-    [
-        "What is 8 divided by 2?",
-        "8 divided by 2 equals 4."
-    ],
-    [
-        "What is 12 divided by 2?",
-        "12 divided by 2 equals 6."
-    ],
-    [
-        "What is 14 divided by 2?",
-        "14 divided by 2 equals 7."
-    ],
-    [
-        "What is 16 divided by 2?",
-        "16 divided by 2 equals 8."
-    ],
-    [
-        "What is 18 divided by 2?",
-        "18 divided by 2 equals 9."
-    ],
-    [
-        "What is 20 divided by 2?",
-        "20 divided by 2 equals 10."
-    ],
-    [
-        "What is 6 divided by 3?",
-        "6 divided by 3 equals 2."
-    ],
-    [
-        "What is 9 divided by 3?",
-        "9 divided by 3 equals 3."
-    ],
-    [
-        "What is 15 divided by 3?",
-        "15 divided by 3 equals 5."
-    ],
-    [
-        "What is 18 divided by 3?",
-        "18 divided by 3 equals 6."
-    ],
-    [
-        "What is 21 divided by 3?",
-        "21 divided by 3 equals 7."
-    ],
-    [
-        "What is 24 divided by 3?",
-        "24 divided by 3 equals 8."
-    ],
-    [
-        "What is 27 divided by 3?",
-        "27 divided by 3 equals 9."
-    ],
-    [
-        "What is 30 divided by 3?",
-        "30 divided by 3 equals 10."
-    ],
-    [
-        "What is 8 divided by 4?",
-        "8 divided by 4 equals 2."
-    ],
-    [
-        "What is 12 divided by 4?",
-        "12 divided by 4 equals 3."
-    ],
-    [
-        "What is 16 divided by 4?",
-        "16 divided by 4 equals 4."
-    ],
-    [
-        "What is 20 divided by 4?",
-        "20 divided by 4 equals 5."
-    ],
-    [
-        "What is 24 divided by 4?",
-        "24 divided by 4 equals 6."
-    ],
-    [
-        "What is 28 divided by 4?",
-        "28 divided by 4 equals 7."
-    ],
-    [
-        "What is 32 divided by 4?",
-        "32 divided by 4 equals 8."
-    ],
-    [
-        "What is 36 divided by 4?",
-        "36 divided by 4 equals 9."
-    ],
-    [
-        "What is 40 divided by 4?",
-        "40 divided by 4 equals 10."
-    ],
-    [
-        "What is 10 divided by 5?",
-        "10 divided by 5 equals 2."
-    ],
-    [
-        "What is 15 divided by 5?",
-        "15 divided by 5 equals 3."
-    ],
-    [
-        "What is 20 divided by 5?",
-        "20 divided by 5 equals 4."
-    ],
-    [
-        "What is 25 divided by 5?",
-        "25 divided by 5 equals 5."
-    ],
-    [
-        "What is 30 divided by 5?",
-        "30 divided by 5 equals 6."
-    ],
-    [
-        "What is 35 divided by 5?",
-        "35 divided by 5 equals 7."
-    ],
-    [
-        "What is 40 divided by 5?",
-        "40 divided by 5 equals 8."
-    ],
-    [
-        "What is 45 divided by 5?",
-        "45 divided by 5 equals 9."
-    ],
-    [
-        "What is 50 divided by 5?",
-        "50 divided by 5 equals 10."
-    ],
-    [
-        "What is 12 divided by 6?",
-        "12 divided by 6 equals 2."
-    ],
-    [
-        "What is 24 divided by 6?",
-        "24 divided by 6 equals 4."
-    ],
-    [
-        "What is 30 divided by 6?",
-        "30 divided by 6 equals 5."
-    ],
-    [
-        "What is 36 divided by 6?",
-        "36 divided by 6 equals 6."
-    ],
-    [
-        "What is 42 divided by 6?",
-        "42 divided by 6 equals 7."
-    ],
-    [
-        "What is 48 divided by 6?",
-        "48 divided by 6 equals 8."
-    ],
-    [
-        "What is 54 divided by 6?",
-        "54 divided by 6 equals 9."
-    ],
-    [
-        "What is 60 divided by 6?",
-        "60 divided by 6 equals 10."
-    ],
-    [
-        "What is 14 divided by 7?",
-        "14 divided by 7 equals 2."
-    ],
-    [
-        "What is 21 divided by 7?",
-        "21 divided by 7 equals 3."
-    ],
-    [
-        "What is 28 divided by 7?",
-        "28 divided by 7 equals 4."
-    ],
-    [
-        "What is 35 divided by 7?",
-        "35 divided by 7 equals 5."
-    ],
-    [
-        "What is 42 divided by 7?",
-        "42 divided by 7 equals 6."
-    ],
-    [
-        "What is 49 divided by 7?",
-        "49 divided by 7 equals 7."
-    ],
-    [
-        "What is 56 divided by 7?",
-        "56 divided by 7 equals 8."
-    ],
-    [
-        "What is 63 divided by 7?",
-        "63 divided by 7 equals 9."
-    ],
-    [
-        "What is 70 divided by 7?",
-        "70 divided by 7 equals 10."
-    ],
-    [
-        "What is 16 divided by 8?",
-        "16 divided by 8 equals 2."
-    ],
-    [
-        "What is 24 divided by 8?",
-        "24 divided by 8 equals 3."
-    ],
-    [
-        "What is 32 divided by 8?",
-        "32 divided by 8 equals 4."
-    ],
-    [
-        "What is 40 divided by 8?",
-        "40 divided by 8 equals 5."
-    ],
-    [
-        "What is 48 divided by 8?",
-        "48 divided by 8 equals 6."
-    ],
-    [
-        "What is 56 divided by 8?",
-        "56 divided by 8 equals 7."
-    ],
-    [
-        "What is 64 divided by 8?",
-        "64 divided by 8 equals 8."
-    ],
-    [
-        "What is 72 divided by 8?",
-        "72 divided by 8 equals 9."
-    ],
-    [
-        "What is 80 divided by 8?",
-        "80 divided by 8 equals 10."
-    ],
-    [
-        "What is 18 divided by 9?",
-        "18 divided by 9 equals 2."
-    ],
-    [
-        "What is 27 divided by 9?",
-        "27 divided by 9 equals 3."
-    ],
-    [
-        "What is 36 divided by 9?",
-        "36 divided by 9 equals 4."
-    ],
-    [
-        "What is 45 divided by 9?",
-        "45 divided by 9 equals 5."
-    ],
-    [
-        "What is 54 divided by 9?",
-        "54 divided by 9 equals 6."
-    ],
-    [
-        "What is 63 divided by 9?",
-        "63 divided by 9 equals 7."
-    ],
-    [
-        "What is 72 divided by 9?",
-        "72 divided by 9 equals 8."
-    ],
-    [
-        "What is 81 divided by 9?",
-        "81 divided by 9 equals 9."
-    ],
-    [
-        "What is 90 divided by 9?",
-        "90 divided by 9 equals 10."
-    ],
-    [
-        "What is 20 divided by 10?",
-        "20 divided by 10 equals 2."
-    ],
-    [
-        "What is 30 divided by 10?",
-        "30 divided by 10 equals 3."
-    ],
-    [
-        "What is 40 divided by 10?",
-        "40 divided by 10 equals 4."
-    ],
-    [
-        "What is 50 divided by 10?",
-        "50 divided by 10 equals 5."
-    ],
-    [
-        "What is 60 divided by 10?",
-        "60 divided by 10 equals 6."
-    ],
-    [
-        "What is 70 divided by 10?",
-        "70 divided by 10 equals 7."
-    ],
-    [
-        "What is 80 divided by 10?",
-        "80 divided by 10 equals 8."
-    ],
-    [
-        "What is 90 divided by 10?",
-        "90 divided by 10 equals 9."
-    ],
-    [
-        "What is 100 divided by 10?",
-        "100 divided by 10 equals 10."
-    ],
-    [
-        "What is the square of 1?",
-        "The square of 1 is 1."
-    ],
-    [
-        "What is double of 1?",
-        "Double of 1 is 2."
-    ],
-    [
-        "What is the square of 2?",
-        "The square of 2 is 4."
-    ],
-    [
-        "What is double of 2?",
-        "Double of 2 is 4."
-    ],
-    [
-        "What is the square of 3?",
-        "The square of 3 is 9."
-    ],
-    [
-        "What is double of 3?",
-        "Double of 3 is 6."
-    ],
-    [
-        "What is the square of 4?",
-        "The square of 4 is 16."
-    ],
-    [
-        "What is double of 4?",
-        "Double of 4 is 8."
-    ],
-    [
-        "What is the square of 5?",
-        "The square of 5 is 25."
-    ],
-    [
-        "What is double of 5?",
-        "Double of 5 is 10."
-    ],
-    [
-        "What is the square of 6?",
-        "The square of 6 is 36."
-    ],
-    [
-        "What is double of 6?",
-        "Double of 6 is 12."
-    ],
-    [
-        "What is the square of 7?",
-        "The square of 7 is 49."
-    ],
-    [
-        "What is the square of 8?",
-        "The square of 8 is 64."
-    ],
-    [
-        "What is double of 8?",
-        "Double of 8 is 16."
-    ],
-    [
-        "What is the square of 9?",
-        "The square of 9 is 81."
-    ],
-    [
-        "What is double of 9?",
-        "Double of 9 is 18."
-    ],
-    [
-        "What is the square of 10?",
-        "The square of 10 is 100."
-    ],
-    [
-        "What is double of 10?",
-        "Double of 10 is 20."
-    ],
-    [
-        "What is the square of 11?",
-        "The square of 11 is 121."
-    ],
-    [
-        "What is double of 11?",
-        "Double of 11 is 22."
-    ],
-    [
-        "What is the square of 12?",
-        "The square of 12 is 144."
-    ],
-    [
-        "What is double of 12?",
-        "Double of 12 is 24."
-    ],
-    [
-        "What is the square of 13?",
-        "The square of 13 is 169."
-    ],
-    [
-        "What is double of 13?",
-        "Double of 13 is 26."
-    ],
-    [
-        "What is the square of 14?",
-        "The square of 14 is 196."
-    ],
-    [
-        "What is double of 14?",
-        "Double of 14 is 28."
-    ],
-    [
-        "What is the square of 15?",
-        "The square of 15 is 225."
-    ],
-    [
-        "What is double of 15?",
-        "Double of 15 is 30."
-    ],
-    [
-        "What is the square of 16?",
-        "The square of 16 is 256."
-    ],
-    [
-        "What is double of 16?",
-        "Double of 16 is 32."
-    ],
-    [
-        "What is the square of 17?",
-        "The square of 17 is 289."
-    ],
-    [
-        "What is double of 17?",
-        "Double of 17 is 34."
-    ],
-    [
-        "What is the square of 18?",
-        "The square of 18 is 324."
-    ],
-    [
-        "What is double of 18?",
-        "Double of 18 is 36."
-    ],
-    [
-        "What is the square of 19?",
-        "The square of 19 is 361."
-    ],
-    [
-        "What is double of 19?",
-        "Double of 19 is 38."
-    ],
-    [
-        "What is the square of 20?",
-        "The square of 20 is 400."
-    ],
-    [
-        "What is double of 20?",
-        "Double of 20 is 40."
-    ],
-    [
-        "What is half of 2?",
-        "Half of 2 is 1."
-    ],
-    [
-        "What is half of 4?",
-        "Half of 4 is 2."
-    ],
-    [
-        "What is half of 6?",
-        "Half of 6 is 3."
-    ],
-    [
-        "What is half of 8?",
-        "Half of 8 is 4."
-    ],
-    [
-        "What is half of 12?",
-        "Half of 12 is 6."
-    ],
-    [
-        "What is half of 14?",
-        "Half of 14 is 7."
-    ],
-    [
-        "What is half of 16?",
-        "Half of 16 is 8."
-    ],
-    [
-        "What is half of 18?",
-        "Half of 18 is 9."
-    ],
-    [
-        "What is half of 20?",
-        "Half of 20 is 10."
-    ],
-    [
-        "What is half of 22?",
-        "Half of 22 is 11."
-    ],
-    [
-        "What is half of 24?",
-        "Half of 24 is 12."
-    ],
-    [
-        "What is half of 26?",
-        "Half of 26 is 13."
-    ],
-    [
-        "What is half of 28?",
-        "Half of 28 is 14."
-    ],
-    [
-        "What is half of 30?",
-        "Half of 30 is 15."
-    ],
-    [
-        "What is half of 32?",
-        "Half of 32 is 16."
-    ],
-    [
-        "What is half of 34?",
-        "Half of 34 is 17."
-    ],
-    [
-        "What is half of 36?",
-        "Half of 36 is 18."
-    ],
-    [
-        "What is half of 38?",
-        "Half of 38 is 19."
-    ],
-    [
-        "What is half of 40?",
-        "Half of 40 is 20."
-    ],
-    [
-        "What comes after 1?",
-        "2 comes after 1."
-    ],
-    [
-        "What comes after 2?",
-        "3 comes after 2."
-    ],
-    [
-        "What comes after 3?",
-        "4 comes after 3."
-    ],
-    [
-        "What comes after 4?",
-        "5 comes after 4."
-    ],
-    [
-        "What comes after 5?",
-        "6 comes after 5."
-    ],
-    [
-        "What comes after 6?",
-        "7 comes after 6."
-    ],
-    [
-        "What comes after 7?",
-        "8 comes after 7."
-    ],
-    [
-        "What comes after 8?",
-        "9 comes after 8."
-    ],
-    [
-        "What comes after 9?",
-        "10 comes after 9."
-    ],
-    [
-        "What comes after 10?",
-        "11 comes after 10."
-    ],
-    [
-        "What comes after 11?",
-        "12 comes after 11."
-    ],
-    [
-        "What comes after 12?",
-        "13 comes after 12."
-    ],
-    [
-        "What comes after 13?",
-        "14 comes after 13."
-    ],
-    [
-        "What comes after 14?",
-        "15 comes after 14."
-    ],
-    [
-        "What comes after 15?",
-        "16 comes after 15."
-    ],
-    [
-        "What comes after 16?",
-        "17 comes after 16."
-    ],
-    [
-        "What comes after 17?",
-        "18 comes after 17."
-    ],
-    [
-        "What comes after 18?",
-        "19 comes after 18."
-    ],
-    [
-        "What comes after 19?",
-        "20 comes after 19."
-    ],
-    [
-        "What comes after 20?",
-        "21 comes after 20."
-    ],
-    [
-        "What comes after 21?",
-        "22 comes after 21."
-    ],
-    [
-        "What comes after 22?",
-        "23 comes after 22."
-    ],
-    [
-        "What comes after 23?",
-        "24 comes after 23."
-    ],
-    [
-        "What comes after 24?",
-        "25 comes after 24."
-    ],
-    [
-        "What comes after 25?",
-        "26 comes after 25."
-    ],
-    [
-        "What comes after 26?",
-        "27 comes after 26."
-    ],
-    [
-        "What comes after 27?",
-        "28 comes after 27."
-    ],
-    [
-        "What comes after 28?",
-        "29 comes after 28."
-    ],
-    [
-        "What comes after 29?",
-        "30 comes after 29."
-    ],
-    [
-        "What comes after 30?",
-        "31 comes after 30."
-    ],
-    [
-        "What comes before 2?",
-        "1 comes before 2."
-    ],
-    [
-        "What comes before 3?",
-        "2 comes before 3."
-    ],
-    [
-        "What comes before 4?",
-        "3 comes before 4."
-    ],
-    [
-        "What comes before 5?",
-        "4 comes before 5."
-    ],
-    [
-        "What comes before 6?",
-        "5 comes before 6."
-    ],
-    [
-        "What comes before 7?",
-        "6 comes before 7."
-    ],
-    [
-        "What comes before 8?",
-        "7 comes before 8."
-    ],
-    [
-        "What comes before 9?",
-        "8 comes before 9."
-    ],
-    [
-        "What comes before 10?",
-        "9 comes before 10."
-    ],
-    [
-        "What comes before 11?",
-        "10 comes before 11."
-    ],
-    [
-        "What comes before 12?",
-        "11 comes before 12."
-    ],
-    [
-        "What comes before 13?",
-        "12 comes before 13."
-    ],
-    [
-        "What comes before 14?",
-        "13 comes before 14."
-    ],
-    [
-        "What comes before 15?",
-        "14 comes before 15."
-    ],
-    [
-        "What comes before 16?",
-        "15 comes before 16."
-    ],
-    [
-        "What comes before 17?",
-        "16 comes before 17."
-    ],
-    [
-        "What comes before 18?",
-        "17 comes before 18."
-    ],
-    [
-        "What comes before 19?",
-        "18 comes before 19."
-    ],
-    [
-        "What comes before 20?",
-        "19 comes before 20."
-    ],
-    [
-        "What comes before 21?",
-        "20 comes before 21."
-    ],
-    [
-        "What comes before 22?",
-        "21 comes before 22."
-    ],
-    [
-        "What comes before 23?",
-        "22 comes before 23."
-    ],
-    [
-        "What comes before 24?",
-        "23 comes before 24."
-    ],
-    [
-        "What comes before 25?",
-        "24 comes before 25."
-    ],
-    [
-        "What comes before 26?",
-        "25 comes before 26."
-    ],
-    [
-        "What comes before 27?",
-        "26 comes before 27."
-    ],
-    [
-        "What comes before 28?",
-        "27 comes before 28."
-    ],
-    [
-        "What comes before 29?",
-        "28 comes before 29."
-    ],
-    [
-        "What comes before 30?",
-        "29 comes before 30."
-    ],
-    [
-        "What comes before 31?",
-        "30 comes before 31."
-    ],
-    [
-        "What is a variable?",
-        "A variable stores a value that can change."
-    ],
-    [
-        "Why is a variable useful?",
-        "It lets a program remember data and update it later."
-    ],
-    [
-        "How does a variable help?",
-        "It lets a program remember data and update it later."
-    ],
-    [
-        "When would you use a variable?",
-        "It is useful whenever a value may change."
-    ],
-    [
-        "What is a constant?",
-        "A constant stores a value that should stay the same."
-    ],
-    [
-        "Why is a constant useful?",
-        "It protects important values from being changed by accident."
-    ],
-    [
-        "How does a constant help?",
-        "It protects important values from being changed by accident."
-    ],
-    [
-        "When would you use a constant?",
-        "It is useful when a value should stay fixed."
-    ],
-    [
-        "What is a function?",
-        "A function is a reusable block of code that does one job."
-    ],
-    [
-        "Why is a function useful?",
-        "It helps avoid repeating the same code."
-    ],
-    [
-        "How does a function help?",
-        "It helps avoid repeating the same code."
-    ],
-    [
-        "When would you use a function?",
-        "It is useful when the same task needs to happen more than once."
-    ],
-    [
-        "What is a parameter?",
-        "A parameter is a named input a function expects."
-    ],
-    [
-        "Why is a parameter useful?",
-        "It lets a function accept different values."
-    ],
-    [
-        "How does a parameter help?",
-        "It lets a function accept different values."
-    ],
-    [
-        "When would you use a parameter?",
-        "It is useful when a function needs input."
-    ],
-    [
-        "What is an argument?",
-        "An argument is the actual value passed into a function."
-    ],
-    [
-        "Why is an argument useful?",
-        "It gives the function the data it needs."
-    ],
-    [
-        "How does an argument help?",
-        "It gives the function the data it needs."
-    ],
-    [
-        "When would you use an argument?",
-        "It is useful when calling a function."
-    ],
-    [
-        "What is a loop?",
-        "A loop repeats code."
-    ],
-    [
-        "Why is a loop useful?",
-        "It saves time when a task needs to happen many times."
-    ],
-    [
-        "How does a loop help?",
-        "It saves time when a task needs to happen many times."
-    ],
-    [
-        "When would you use a loop?",
-        "It is useful when you want to repeat steps."
-    ],
-    [
-        "What is a condition?",
-        "A condition is a true-or-false test."
-    ],
-    [
-        "Why is a condition useful?",
-        "It lets a program choose what to do next."
-    ],
-    [
-        "How does a condition help?",
-        "It lets a program choose what to do next."
-    ],
-    [
-        "When would you use a condition?",
-        "It is useful when the code should react to different cases."
-    ],
-    [
-        "What is a list?",
-        "A list stores an ordered collection of items."
-    ],
-    [
-        "Why is a list useful?",
-        "It keeps related values together in one place."
-    ],
-    [
-        "How does a list help?",
-        "It keeps related values together in one place."
-    ],
-    [
-        "When would you use a list?",
-        "It is useful when you need a sequence of items."
-    ],
-    [
-        "What is a dictionary?",
-        "A dictionary stores key-value pairs."
-    ],
-    [
-        "Why is a dictionary useful?",
-        "It makes lookups fast and easy."
-    ],
-    [
-        "How does a dictionary help?",
-        "It makes lookups fast and easy."
-    ],
-    [
-        "When would you use a dictionary?",
-        "It is useful when data has names and values."
-    ],
-    [
-        "What is a tuple?",
-        "A tuple is an ordered collection that is usually fixed."
-    ],
-    [
-        "Why is a tuple useful?",
-        "It is handy for data that should not change often."
-    ],
-    [
-        "How does a tuple help?",
-        "It is handy for data that should not change often."
-    ],
-    [
-        "When would you use a tuple?",
-        "It is useful when values belong together."
-    ],
-    [
-        "What is a class?",
-        "A class is a blueprint for creating objects."
-    ],
-    [
-        "Why is a class useful?",
-        "It groups data and behavior together."
-    ],
-    [
-        "How does a class help?",
-        "It groups data and behavior together."
-    ],
-    [
-        "When would you use a class?",
-        "It is useful when you want to model something with structure."
-    ],
-    [
-        "What is an object?",
-        "An object is a specific instance made from a class."
-    ],
-    [
-        "Why is an object useful?",
-        "It represents one real example of a class."
-    ],
-    [
-        "How does an object help?",
-        "It represents one real example of a class."
-    ],
-    [
-        "When would you use an object?",
-        "It is useful when you want one concrete thing from a blueprint."
-    ],
-    [
-        "What is a method?",
-        "A method is a function that belongs to a class or object."
-    ],
-    [
-        "Why is a method useful?",
-        "It keeps object behavior organized."
-    ],
-    [
-        "How does a method help?",
-        "It keeps object behavior organized."
-    ],
-    [
-        "When would you use a method?",
-        "It is useful when code needs to act on an object."
-    ],
-    [
-        "What is a module?",
-        "A module is a Python file you can import."
-    ],
-    [
-        "Why is a module useful?",
-        "It helps keep code organized into smaller parts."
-    ],
-    [
-        "How does a module help?",
-        "It helps keep code organized into smaller parts."
-    ],
-    [
-        "When would you use a module?",
-        "It is useful when code should be split across files."
-    ],
-    [
-        "What is an import?",
-        "Import brings code from another module into your file."
-    ],
-    [
-        "Why is an import useful?",
-        "It lets you reuse existing code."
-    ],
-    [
-        "How does an import help?",
-        "It lets you reuse existing code."
-    ],
-    [
-        "When would you use an import?",
-        "It is useful when you need functionality from elsewhere."
-    ],
-    [
-        "What is an exception?",
-        "An exception is an error that interrupts normal flow."
-    ],
-    [
-        "Why is an exception useful?",
-        "It helps programs handle problems safely."
-    ],
-    [
-        "How does an exception help?",
-        "It helps programs handle problems safely."
-    ],
-    [
-        "When would you use an exception?",
-        "It is useful when something might fail."
-    ],
-    [
-        "What is a test?",
-        "A test checks whether code behaves as expected."
-    ],
-    [
-        "Why is a test useful?",
-        "It helps catch bugs early."
-    ],
-    [
-        "How does a test help?",
-        "It helps catch bugs early."
-    ],
-    [
-        "When would you use a test?",
-        "It is useful when you want to verify behavior."
-    ],
-    [
-        "What is a debug?",
-        "Debugging is finding and fixing problems in code."
-    ],
-    [
-        "Why is a debug useful?",
-        "It helps you understand why code fails."
-    ],
-    [
-        "How does a debug help?",
-        "It helps you understand why code fails."
-    ],
-    [
-        "When would you use a debug?",
-        "It is useful when something does not work correctly."
-    ],
-    [
-        "What is an algorithm?",
-        "An algorithm is a step-by-step method for solving a problem."
-    ],
-    [
-        "Why is an algorithm useful?",
-        "It gives a clear path from input to output."
-    ],
-    [
-        "How does an algorithm help?",
-        "It gives a clear path from input to output."
-    ],
-    [
-        "When would you use an algorithm?",
-        "It is useful when you need a repeatable solution."
-    ],
-    [
-        "What is a recursion?",
-        "Recursion is when a function calls itself to solve a smaller version of a problem."
-    ],
-    [
-        "Why is a recursion useful?",
-        "It can make some problems easier to express."
-    ],
-    [
-        "How does a recursion help?",
-        "It can make some problems easier to express."
-    ],
-    [
-        "When would you use a recursion?",
-        "It is useful when a problem can be broken into similar subproblems."
-    ],
-    [
-        "Why is the Sun important?",
-        "It gives Earth light and heat."
-    ],
-    [
-        "Why is Earth important?",
-        "It is the planet where we live."
-    ],
-    [
-        "Why is the Moon important?",
-        "It affects tides and lights the night sky."
-    ],
-    [
-        "Why is gravity important?",
-        "It keeps planets, moons, and people held to surfaces."
-    ],
-    [
-        "Why is the water cycle important?",
-        "It keeps water moving through Earth's systems."
-    ],
-    [
-        "Why is photosynthesis important?",
-        "It helps plants grow and supports life on Earth."
-    ],
-    [
-        "What is the heart?",
-        "The heart is a muscular organ that pumps blood through the body."
-    ],
-    [
-        "Why is the heart important?",
-        "It keeps blood moving to the organs and tissues."
-    ],
-    [
-        "What is the lungs?",
-        "The lungs exchange oxygen and carbon dioxide."
-    ],
-    [
-        "Why is the lungs important?",
-        "They help the body breathe and get oxygen."
-    ],
-    [
-        "What is the brain?",
-        "The brain is the center of the nervous system."
-    ],
-    [
-        "Why is the brain important?",
-        "It helps us think, remember, and control actions."
-    ],
-    [
-        "Why is a cell important?",
-        "It is the smallest building block of living things."
-    ],
-    [
-        "Why is an atom important?",
-        "Atoms make up all ordinary matter."
-    ],
-    [
-        "Why is matter important?",
-        "It includes the stuff around us."
-    ],
-    [
-        "What is oxygen?",
-        "Oxygen is a gas that living things use for respiration."
-    ],
-    [
-        "Why is oxygen important?",
-        "It helps many organisms produce energy."
-    ],
-    [
-        "What is carbon dioxide?",
-        "Carbon dioxide is a gas that plants use in photosynthesis and that people exhale."
-    ],
-    [
-        "Why is carbon dioxide important?",
-        "It is part of the carbon cycle."
-    ],
-    [
-        "What is the ocean?",
-        "An ocean is a very large body of salt water."
-    ],
-    [
-        "Why is the ocean important?",
-        "Oceans hold most of Earth's water."
-    ],
-    [
-        "Why is a continent important?",
-        "Continents divide Earth's land into major regions."
-    ],
-    [
-        "Why is a mountain important?",
-        "Mountains shape weather, water flow, and habitats."
-    ],
-    [
-        "Why is a river important?",
-        "Rivers move fresh water across the land."
-    ],
-    [
-        "Why is a desert important?",
-        "Deserts show how life adapts to dry climates."
-    ],
-    [
-        "Why is a volcano important?",
-        "Volcanoes help shape land through eruptions."
-    ],
-    [
-        "Why is an earthquake important?",
-        "It shows that tectonic plates are moving."
-    ],
-    [
-        "Why is a season important?",
-        "Seasons help describe yearly climate patterns."
-    ],
-    [
-        "What is weather?",
-        "Weather is the short-term condition of the atmosphere."
-    ],
-    [
-        "Why is weather important?",
-        "It tells us what the sky and air are doing now."
-    ],
-    [
-        "What is an ecosystem?",
-        "An ecosystem is a community of living things and their environment."
-    ],
-    [
-        "Why is an ecosystem important?",
-        "It shows how plants, animals, and nature interact."
-    ],
-    [
-        "What is a plant?",
-        "A plant is a living organism that usually makes its own food."
-    ],
-    [
-        "Why is a plant important?",
-        "Plants support many food chains."
-    ],
-    [
-        "What is an animal?",
-        "An animal is a living organism that gets food from other sources."
-    ],
-    [
-        "Why is an animal important?",
-        "Animals make up a huge part of Earth's biodiversity."
-    ],
-    [
-        "Why is a star important?",
-        "Stars are the building blocks of galaxies."
-    ],
-    [
-        "Why is a planet important?",
-        "Planets are major parts of solar systems."
-    ],
-    [
-        "Why is a galaxy important?",
-        "Galaxies hold billions of stars."
-    ],
-    [
-        "What is life?",
-        "Life is the state of living things."
-    ],
-    [
-        "Why is life important?",
-        "It includes growth, energy use, and reproduction."
-    ],
-    [
-        "What city is the capital of France?",
-        "Paris"
-    ],
-    [
-        "Name the capital city of France.",
-        "Paris"
-    ],
-    [
-        "What city is the capital of Germany?",
-        "Berlin"
-    ],
-    [
-        "Name the capital city of Germany.",
-        "Berlin"
-    ],
-    [
-        "What city is the capital of Italy?",
-        "Rome"
-    ],
-    [
-        "Name the capital city of Italy.",
-        "Rome"
-    ],
-    [
-        "What city is the capital of Spain?",
-        "Madrid"
-    ],
-    [
-        "Name the capital city of Spain.",
-        "Madrid"
-    ],
-    [
-        "What city is the capital of Portugal?",
-        "Lisbon"
-    ],
-    [
-        "Name the capital city of Portugal.",
-        "Lisbon"
-    ],
-    [
-        "What city is the capital of Netherlands?",
-        "Amsterdam"
-    ],
-    [
-        "Name the capital city of Netherlands.",
-        "Amsterdam"
-    ],
-    [
-        "What city is the capital of Belgium?",
-        "Brussels"
-    ],
-    [
-        "Name the capital city of Belgium.",
-        "Brussels"
-    ],
-    [
-        "What city is the capital of Switzerland?",
-        "Bern"
-    ],
-    [
-        "Name the capital city of Switzerland.",
-        "Bern"
-    ],
-    [
-        "What city is the capital of Austria?",
-        "Vienna"
-    ],
-    [
-        "Name the capital city of Austria.",
-        "Vienna"
-    ],
-    [
-        "What city is the capital of Greece?",
-        "Athens"
-    ],
-    [
-        "Name the capital city of Greece.",
-        "Athens"
-    ],
-    [
-        "What city is the capital of Norway?",
-        "Oslo"
-    ],
-    [
-        "Name the capital city of Norway.",
-        "Oslo"
-    ],
-    [
-        "What city is the capital of Sweden?",
-        "Stockholm"
-    ],
-    [
-        "Name the capital city of Sweden.",
-        "Stockholm"
-    ],
-    [
-        "What city is the capital of Denmark?",
-        "Copenhagen"
-    ],
-    [
-        "Name the capital city of Denmark.",
-        "Copenhagen"
-    ],
-    [
-        "What city is the capital of Poland?",
-        "Warsaw"
-    ],
-    [
-        "Name the capital city of Poland.",
-        "Warsaw"
-    ],
-    [
-        "What city is the capital of Finland?",
-        "Helsinki"
-    ],
-    [
-        "Name the capital city of Finland.",
-        "Helsinki"
-    ],
-    [
-        "What city is the capital of Ireland?",
-        "Dublin"
-    ],
-    [
-        "Name the capital city of Ireland.",
-        "Dublin"
-    ],
-    [
-        "What city is the capital of Canada?",
-        "Ottawa"
-    ],
-    [
-        "Name the capital city of Canada.",
-        "Ottawa"
-    ],
-    [
-        "What city is the capital of the United States?",
-        "Washington, D.C."
-    ],
-    [
-        "Name the capital city of the United States.",
-        "Washington, D.C."
-    ],
-    [
-        "What city is the capital of Mexico?",
-        "Mexico City"
-    ],
-    [
-        "Name the capital city of Mexico.",
-        "Mexico City"
-    ],
-    [
-        "What city is the capital of Brazil?",
-        "Brasilia"
-    ],
-    [
-        "Name the capital city of Brazil.",
-        "Brasilia"
-    ],
-    [
-        "What city is the capital of Argentina?",
-        "Buenos Aires"
-    ],
-    [
-        "Name the capital city of Argentina.",
-        "Buenos Aires"
-    ],
-    [
-        "What city is the capital of Chile?",
-        "Santiago"
-    ],
-    [
-        "Name the capital city of Chile.",
-        "Santiago"
-    ],
-    [
-        "What city is the capital of Peru?",
-        "Lima"
-    ],
-    [
-        "Name the capital city of Peru.",
-        "Lima"
-    ],
-    [
-        "What city is the capital of Egypt?",
-        "Cairo"
-    ],
-    [
-        "Name the capital city of Egypt.",
-        "Cairo"
-    ],
-    [
-        "What city is the capital of Kenya?",
-        "Nairobi"
-    ],
-    [
-        "Name the capital city of Kenya.",
-        "Nairobi"
-    ],
-    [
-        "What city is the capital of Japan?",
-        "Tokyo"
-    ],
-    [
-        "Name the capital city of Japan.",
-        "Tokyo"
-    ],
-    [
-        "How do I ask for clarification?",
-        "Ask one or two specific follow-up questions."
-    ],
-    [
-        "Why is it useful to ask for clarification?",
-        "It helps avoid guessing."
-    ],
-    [
-        "How do I be honest when unsure?",
-        "Say you are not sure instead of making things up."
-    ],
-    [
-        "Why is it useful to be honest when unsure?",
-        "It keeps your answer trustworthy."
-    ],
-    [
-        "How do I summarize text?",
-        "Pull out the main ideas and shorten the details."
-    ],
-    [
-        "Why is it useful to summarize text?",
-        "It helps people understand quickly."
-    ],
-    [
-        "How do I explain simply?",
-        "Use short sentences and familiar words."
-    ],
-    [
-        "Why is it useful to explain simply?",
-        "It makes the idea easier to follow."
-    ],
-    [
-        "Why is it useful to stay organized?",
-        "It helps you avoid forgetting things."
-    ],
-    [
-        "How do I refuse unsafe requests?",
-        "Politely refuse and offer a safer alternative."
-    ],
-    [
-        "Why is it useful to refuse unsafe requests?",
-        "It helps keep people safe."
-    ],
-    [
-        "How do I compare options?",
-        "List the pros and cons of each choice."
-    ],
-    [
-        "Why is it useful to compare options?",
-        "It makes decisions easier."
-    ],
-    [
-        "How do I make a checklist?",
-        "Write the steps as short items you can tick off."
-    ],
-    [
-        "Why is it useful to make a checklist?",
-        "It helps you track progress."
-    ],
-    [
-        "How do I prioritize tasks?",
-        "Do the urgent and important work first."
-    ],
-    [
-        "Why is it useful to prioritize tasks?",
-        "It helps you use time well."
-    ],
-    [
-        "How do I write code?",
-        "Break the problem into small steps and test your work."
-    ],
-    [
-        "Why is it useful to write code?",
-        "It helps turn an idea into a program."
-    ],
-    [
-        "How do I debug a problem?",
-        "Check the inputs, outputs, and error messages one by one."
-    ],
-    [
-        "Why is it useful to debug a problem?",
-        "It helps you find the cause of the bug."
-    ],
-    [
-        "How do I review a bug?",
-        "Reproduce it, then narrow down where it happens."
-    ],
-    [
-        "Why is it useful to review a bug?",
-        "It helps you isolate the problem."
-    ],
-    [
-        "How do I check spelling?",
-        "Read the text carefully and look for mistakes."
-    ],
-    [
-        "Why is it useful to check spelling?",
-        "It makes writing clearer."
-    ],
-    [
-        "How do I give examples?",
-        "Use a simple case that shows the idea in action."
-    ],
-    [
-        "Why is it useful to give examples?",
-        "Examples make explanations easier to understand."
-    ],
-    [
-        "How do I answer briefly?",
-        "Use one or two short sentences."
-    ],
-    [
-        "Why is it useful to answer briefly?",
-        "It keeps the reply quick and direct."
-    ],
-    [
-        "How do I answer in detail?",
-        "Add context, steps, and examples."
-    ],
-    [
-        "Why is it useful to answer in detail?",
-        "It is helpful when the topic needs more explanation."
-    ],
-    [
-        "How do I take notes?",
-        "Write down the main points and next actions."
-    ],
-    [
-        "Why is it useful to take notes?",
-        "It helps you remember important details."
-    ],
-    [
-        "How do I split tasks?",
-        "Break a big job into smaller steps."
-    ],
-    [
-        "Why is it useful to split tasks?",
-        "It makes the work less overwhelming."
-    ],
-    [
-        "How do I set goals?",
-        "Choose a clear target and a deadline."
-    ],
-    [
-        "Why is it useful to set goals?",
-        "It helps you stay focused."
-    ],
-    [
-        "How do I ask one question at a time?",
-        "Keep the question clear and specific."
-    ],
-    [
-        "Why is it useful to ask one question at a time?",
-        "It is easier to answer."
-    ],
-    [
-        "How do you greet someone politely?",
-        "Say hello and use a friendly tone."
-    ],
-    [
-        "What is a good way to greet someone politely?",
-        "Say hello and use a friendly tone."
-    ],
-    [
-        "How do you ask for help?",
-        "Be clear about what you need."
-    ],
-    [
-        "What is a good way to ask for help?",
-        "Be clear about what you need."
-    ],
-    [
-        "How do you say thank you?",
-        "Say thank you and be sincere."
-    ],
-    [
-        "What is a good way to say thank you?",
-        "Say thank you and be sincere."
-    ],
-    [
-        "How do you say sorry?",
-        "Say sorry and fix the mistake if you can."
-    ],
-    [
-        "What is a good way to say sorry?",
-        "Say sorry and fix the mistake if you can."
-    ],
-    [
-        "How do you say goodbye politely?",
-        "Say goodbye and thank the person."
-    ],
-    [
-        "What is a good way to say goodbye politely?",
-        "Say goodbye and thank the person."
-    ],
-    [
-        "How do you check how someone is doing?",
-        "You can ask, “How are you?”"
-    ],
-    [
-        "What is a good way to check how someone is doing?",
-        "You can ask, “How are you?”"
-    ],
-    [
-        "How do you start a friendly chat?",
-        "Use a simple greeting or a light topic."
-    ],
-    [
-        "What is a good way to start a friendly chat?",
-        "Use a simple greeting or a light topic."
-    ],
-    [
-        "How do you respond to a yes-or-no question?",
-        "Answer clearly and directly."
-    ],
-    [
-        "What is a good way to respond to a yes-or-no question?",
-        "Answer clearly and directly."
-    ],
-    [
-        "How do you encourage someone?",
-        "Say something kind and supportive."
-    ],
-    [
-        "What is a good way to encourage someone?",
-        "Say something kind and supportive."
-    ],
-    [
-        "How do you keep a conversation polite?",
-        "Use respectful words and a calm tone."
-    ],
-    [
-        "What is a good way to keep a conversation polite?",
-        "Use respectful words and a calm tone."
+        "كيف أساعد شخصاً يتعلم؟",
+        "أشرح ببساطة وأقدم أمثلة وأشجع على المتابعة."
     ]
 ]

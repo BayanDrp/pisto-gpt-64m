@@ -80,7 +80,7 @@ ds = load_dataset(**load_kwargs)
 alpaca = [
     (s["instruction"], s["output"])
     for s in ds
-    if not s["input"]
+    if not s.get("input", "")
     and len(s["output"])      < dataset_cfg["alpaca_max_output_len"]
     and len(s["instruction"]) < dataset_cfg["alpaca_max_instruction_len"]
     and len(s["output"])      > dataset_cfg["alpaca_min_output_len"]
