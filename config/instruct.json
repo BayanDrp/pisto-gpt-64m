@@ -8,7 +8,7 @@
         "max_len": 512
     },
     "training": {
-        "max_hours": 4.5,
+        "max_hours": 1.5,
         "grad_accum": 2,
         "max_steps": 100000,
         "warmup_steps": 100,
