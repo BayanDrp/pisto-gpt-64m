@@ -19,7 +19,7 @@
         "batch_size": 16
     },
     "dataset": {
-        "name": "roneneldan/TinyStories",
+        "name": "Jr23xd23/ArabicText-Large",
         "split": "train",
         "max_docs": 200000,
         "min_len": 50,

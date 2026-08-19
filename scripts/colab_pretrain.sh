@@ -48,7 +48,7 @@ import json
 cfg_path = '$REMOTE/config/train.json'
 with open(cfg_path) as f:
     cfg = json.load(f)
-cfg['dataset'] = {'name': 'gagan3012/arabictext', 'split': 'train', 'max_docs': 200000, 'min_len': 50, 'train_split': 0.95}
+cfg['dataset'] = {'name': 'Jr23xd23/ArabicText-Large', 'split': 'train', 'max_docs': 200000, 'min_len': 50, 'train_split': 0.95}
 with open(cfg_path, 'w') as f:
     json.dump(cfg, f, indent=4, ensure_ascii=False)
 print('config/train.json patched for Arabic')

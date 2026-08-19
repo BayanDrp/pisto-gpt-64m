@@ -12,8 +12,8 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers, decoders
 def main():
     from datasets import load_dataset
 
-    print("Loading Arabic text (gagan3012/arabictext)...")
-    ds = load_dataset("gagan3012/arabictext", split="train", streaming=True)
+    print("Loading Arabic text (Jr23xd23/ArabicText-Large)...")
+    ds = load_dataset("Jr23xd23/ArabicText-Large", split="train", streaming=True)
     texts = []
     for i, s in enumerate(ds):
         if i >= 100_000:

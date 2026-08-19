@@ -62,6 +62,8 @@ class TextDataset(Dataset):
             all_tokens.extend(tokenizer.tokenize(text))
         self.data = th.tensor(all_tokens, dtype=th.long)
         self.n = (len(self.data) - 1) // seq_len
+        if self.n == 0:
+            raise ValueError(f"Not enough data: only {len(self.data)} tokens, need {seq_len + 1}")
         print(f"Tokens: {len(self.data):,} → {self.n:,} chunks")
 
     def __len__(self):
@@ -95,7 +97,7 @@ for i, s in enumerate(ds):
     if len(text) > dataset_cfg["min_len"]:
         texts.append(text)
     if i % 20_000 == 0:
-        print(f"  {i:,} stories...")
+        print(f"  {i:,} docs...")
 
 random.shuffle(texts)
 split = int(len(texts) * dataset_cfg["train_split"])
@@ -122,6 +124,11 @@ LOG_EVERY    = train_cfg["log_every"]
 EVAL_EVERY   = train_cfg["eval_every"]
 LR           = train_cfg["lr"]
 LR_MIN       = train_cfg["lr_min"]
+
+# ── Overfitting detection ────────────────────────────────────
+OVERFIT_PATIENCE = 5       # stop after N consecutive eval-loss increases
+eval_history     = []
+done             = False   # shared stop flag
 
 # ── Optimizer ────────────────────────────────────────────────
 decay, no_decay = [], []
@@ -151,20 +158,24 @@ def get_lr(step):
 def evaluate(n=30):
     mdl.eval()
     total = 0
-    for i, batch in enumerate(eval_loader):
-        if i >= n:
-            break
-        x = batch[:, :-1].to(device)
-        y = batch[:, 1:].to(device)
-        with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
-            loss = F.cross_entropy(
-                mdl(x).reshape(-1, mdl.vocab_size),
-                y.reshape(-1),
-                ignore_index=0,
-            )
-        total += loss.item()
-    mdl.train()
-    return total / max(n, 1)
+    n_batches = 0
+    try:
+        for i, batch in enumerate(eval_loader):
+            if i >= n:
+                break
+            x = batch[:, :-1].to(device)
+            y = batch[:, 1:].to(device)
+            with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
+                loss = F.cross_entropy(
+                    mdl(x).reshape(-1, mdl.vocab_size),
+                    y.reshape(-1),
+                    ignore_index=0,
+                )
+            total += loss.item()
+            n_batches += 1
+    finally:
+        mdl.train()
+    return total / max(n_batches, 1)
 
 def save_ckpt(step, loss):
     path = SAVE_DIR / "pretrain_best.pt"
@@ -189,7 +200,8 @@ if resume_path.exists():
     if "optimizer" in ckpt:
         optimizer.load_state_dict(ckpt["optimizer"])
     step = ckpt.get("step", 0)
-    print(f"Resumed: step={step:,} | tokens={step*batch_size*seq_len*GRAD_ACCUM/1e6:.0f}M")
+    best_eval = ckpt.get("loss", float("inf"))
+    print(f"Resumed: step={step:,} | best_eval={best_eval:.4f} | tokens={step*batch_size*seq_len*GRAD_ACCUM/1e6:.0f}M")
 else:
     print("Starting fresh")
 
@@ -199,64 +211,88 @@ t0       = time.time()
 mdl.train()
 
 print(f"\n{'='*50}")
-print(f"Pretraining | max {MAX_HOURS}h | target ~500M tok")
+print(f"Pretraining | max {MAX_HOURS}h | overfit_patience={OVERFIT_PATIENCE}")
 print(f"{'='*50}\n")
 
-while step < MAX_STEPS:
-    for batch in train_loader:
+loader_iter = iter(train_loader)
 
-        elapsed_h = (time.time() - t0) / 3600
-        if elapsed_h >= MAX_HOURS:
-            save_ckpt(step, loss_val)
-            tokens_m = step * batch_size * seq_len * GRAD_ACCUM / 1e6
-            print(f"\nDone. step={step:,} | tokens={tokens_m:.0f}M | best_eval={best_eval:.4f}")
+while step < MAX_STEPS and not done:
+    lr = get_lr(step)
+    for g in optimizer.param_groups:
+        g["lr"] = lr
+
+    optimizer.zero_grad(set_to_none=True)
+    loss_val = 0.0
+
+    for _ in range(GRAD_ACCUM):
+        try:
+            micro = next(loader_iter)
+        except StopIteration:
+            loader_iter = iter(train_loader)
+            micro = next(loader_iter)
+
+        x = micro[:, :-1].to(device, non_blocking=True)
+        y = micro[:, 1:].to(device, non_blocking=True)
+        with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
+            loss = F.cross_entropy(
+                mdl(x).reshape(-1, mdl.vocab_size),
+                y.reshape(-1),
+                ignore_index=0,
+            ) / GRAD_ACCUM
+        scaler.scale(loss).backward()
+        loss_val += loss.item()
+
+    scaler.unscale_(optimizer)
+    gnorm = th.nn.utils.clip_grad_norm_(mdl.parameters(), 1.0)
+    scaler.step(optimizer)
+    scaler.update()
+    step += 1
+
+    # ── Time limit → save last, not best ────────────────────
+    elapsed_h = (time.time() - t0) / 3600
+    if elapsed_h >= MAX_HOURS:
+        last_path = SAVE_DIR / "pretrain_last.pt"
+        th.save({"step": step, "loss": loss_val,
+                 "model": mdl.state_dict(), "optimizer": optimizer.state_dict()}, last_path)
+        print(f"\n⏱ Time limit reached. Saved pretrain_last.pt (step={step:,})")
+        print(f"Best checkpoint: pretrain_best.pt (eval={best_eval:.4f})")
+        done = True
+        break
+
+    if step % LOG_EVERY == 0:
+        tokens_m = step * batch_size * seq_len * GRAD_ACCUM / 1e6
+        ppl      = math.exp(min(loss_val, 20))
+        print(f"step={step:6d} | loss={loss_val:.4f} | ppl={ppl:.1f} | "
+              f"lr={lr:.2e} | gnorm={gnorm:.2f} | "
+              f"{elapsed_h:.2f}h | {tokens_m:.0f}M tok")
+        with open(log_path, "a") as f:
+            f.write(json.dumps({
+                "step": step, "loss": loss_val, "ppl": ppl,
+                "lr": lr, "gnorm": float(gnorm),
+                "elapsed_h": elapsed_h, "tokens_M": tokens_m,
+            }) + "\n")
+
+    if step % EVAL_EVERY == 0:
+        ev = evaluate()
+        ppl = math.exp(min(ev, 20))
+        print(f"  ↳ eval={ev:.4f} | ppl={ppl:.1f}")
+        with open(log_path, "a") as f:
+            f.write(json.dumps({"step": step, "eval_loss": ev}) + "\n")
+        if ev < best_eval:
+            best_eval = ev
+            save_ckpt(step, ev)
+
+        # ── Overfitting detection ───────────────────────────
+        eval_history.append(ev)
+        if len(eval_history) > OVERFIT_PATIENCE and all(
+            eval_history[-i] > eval_history[-i - 1]
+            for i in range(1, OVERFIT_PATIENCE + 1)
+        ):
+            print(f"\n⚠ OVERFITTING: eval loss rose {OVERFIT_PATIENCE}x in a row "
+                  f"({eval_history[-OVERFIT_PATIENCE-1]:.4f} → {eval_history[-1]:.4f})")
+            print(f"  Stopping early. Best: pretrain_best.pt (eval={best_eval:.4f})")
+            done = True
             break
 
-        lr = get_lr(step)
-        for g in optimizer.param_groups:
-            g["lr"] = lr
-
-        optimizer.zero_grad(set_to_none=True)
-        loss_val = 0.0
-
-        for _ in range(GRAD_ACCUM):
-            x = batch[:, :-1].to(device, non_blocking=True)
-            y = batch[:, 1:].to(device, non_blocking=True)
-            with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
-                loss = F.cross_entropy(
-                    mdl(x).reshape(-1, mdl.vocab_size),
-                    y.reshape(-1),
-                    ignore_index=0,
-                ) / GRAD_ACCUM
-            scaler.scale(loss).backward()
-            loss_val += loss.item()
-
-        scaler.unscale_(optimizer)
-        gnorm = th.nn.utils.clip_grad_norm_(mdl.parameters(), 1.0)
-        scaler.step(optimizer)
-        scaler.update()
-        step += 1
-
-        if step % LOG_EVERY == 0:
-            elapsed_h = (time.time() - t0) / 3600
-            tokens_m  = step * batch_size * seq_len * GRAD_ACCUM / 1e6
-            ppl       = math.exp(min(loss_val, 20))
-            print(f"step={step:6d} | loss={loss_val:.4f} | ppl={ppl:.1f} | "
-                  f"lr={lr:.2e} | gnorm={gnorm:.2f} | "
-                  f"{elapsed_h:.2f}h | {tokens_m:.0f}M tok")
-            with open(log_path, "a") as f:
-                f.write(json.dumps({
-                    "step": step, "loss": loss_val, "ppl": ppl,
-                    "lr": lr, "gnorm": float(gnorm),
-                    "elapsed_h": elapsed_h, "tokens_M": tokens_m,
-                }) + "\n")
-
-        if step % EVAL_EVERY == 0:
-            ev = evaluate()
-            ppl = math.exp(min(ev, 20))
-            print(f"  ↳ eval={ev:.4f} | ppl={ppl:.1f}")
-            with open(log_path, "a") as f:
-                f.write(json.dumps({"step": step, "eval_loss": ev}) + "\n")
-            if ev < best_eval:
-                best_eval = ev
-                save_ckpt(step, ev)
+if not done:
+    print(f"\nDone. step={step:,} | best_eval={best_eval:.4f}")
