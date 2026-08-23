@@ -21,7 +21,7 @@
     "dataset": {
         "name": "Jr23xd23/ArabicText-Large",
         "split": "train",
-        "max_docs": 50000,
+        "max_docs": 100000,
         "min_len": 50,
         "train_split": 0.95
     },
