@@ -4,6 +4,9 @@
 import sys, os, math, time, json, random
 from pathlib import Path
 
+# Force line-buffered output so we can see progress/errors
+sys.stdout.reconfigure(line_buffering=True)
+
 import torch as th
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
@@ -87,7 +90,11 @@ load_kwargs = {
 }
 if HF_TOKEN:
     load_kwargs["token"] = HF_TOKEN
-ds = load_dataset(**load_kwargs)
+try:
+    ds = load_dataset(**load_kwargs)
+except Exception as e:
+    print(f"ERROR loading dataset: {e}")
+    raise
 
 texts = []
 for i, s in enumerate(ds):
