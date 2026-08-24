@@ -54,6 +54,12 @@ if PRETRAINED.exists():
 else:
     print(f"⚠ Pretrained weights not found at {PRETRAINED} — starting from scratch")
 
+# ── Multi-GPU via DataParallel (if >1 GPU available) ─────
+if th.cuda.is_available() and th.cuda.device_count() > 1:
+    print(f"Using {th.cuda.device_count()} GPUs via DataParallel")
+    mdl = th.nn.DataParallel(mdl)
+_core = mdl.module if isinstance(mdl, th.nn.DataParallel) else mdl
+
 print(f"Parameters: {sum(p.numel() for p in mdl.parameters())/1e6:.1f}M")
 
 # ── Dataset ──────────────────────────────────────────────────
@@ -185,7 +191,7 @@ def evaluate(n=30):
             y = batch[:, 1:].to(device)
             with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
                 loss = F.cross_entropy(
-                    mdl(x).reshape(-1, mdl.vocab_size),
+                    mdl(x).reshape(-1, _core.vocab_size),
                     y.reshape(-1),
                     ignore_index=0,
                 )
@@ -200,7 +206,7 @@ def save_ckpt(step, loss):
     th.save({
         "step": step,
         "loss": loss,
-        "model": mdl.state_dict(),
+        "model": _core.state_dict(),
         "optimizer": optimizer.state_dict(),
     }, path)
     print(f"  ✓ instruct_best.pt saved (step={step:,})")
@@ -214,7 +220,7 @@ resume_path = SAVE_DIR / "instruct_best.pt"
 if resume_path.exists():
     print(f"Resuming from {resume_path}...")
     ckpt = th.load(resume_path, map_location=device, weights_only=False)
-    mdl.load_state_dict(ckpt["model"])
+    _core.load_state_dict(ckpt["model"])
     if "optimizer" in ckpt:
         optimizer.load_state_dict(ckpt["optimizer"])
     step = ckpt.get("step", 0)
@@ -253,7 +259,7 @@ while step < MAX_STEPS and not done:
         y = micro[:, 1:].to(device, non_blocking=True)
         with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
             loss = F.cross_entropy(
-                mdl(x).reshape(-1, mdl.vocab_size),
+                mdl(x).reshape(-1, _core.vocab_size),
                 y.reshape(-1),
                 ignore_index=0,
             ) / GRAD_ACCUM
@@ -271,7 +277,7 @@ while step < MAX_STEPS and not done:
     if elapsed_h >= MAX_HOURS:
         last_path = SAVE_DIR / "instruct_last.pt"
         th.save({"step": step, "loss": loss_val,
-                 "model": mdl.state_dict(), "optimizer": optimizer.state_dict()}, last_path)
+                 "model": _core.state_dict(), "optimizer": optimizer.state_dict()}, last_path)
         print(f"\n⏱ Time limit reached. Saved instruct_last.pt (step={step:,})")
         print(f"Best checkpoint: instruct_best.pt (eval={best_eval:.4f})")
         done = True
