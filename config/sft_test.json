@@ -1,0 +1,49 @@
+{
+  "model": {
+    "d_model": 720,
+    "nhead": 8,
+    "dim_feedforward": 2880,
+    "dropout": 0.1,
+    "transformer_layers": 10,
+    "max_len": 512
+  },
+  "training": {
+    "max_hours": 0.2,
+    "grad_accum": 1,
+    "max_steps": 300,
+    "warmup_steps": 30,
+    "log_every": 25,
+    "eval_every": 100,
+    "lr": 3e-5,
+    "lr_min": 3e-6,
+    "batch_size": 16,
+    "label_smoothing": 0.05,
+    "overfit_patience": 6
+  },
+  "dataset": {
+    "train_file": "data/sft_train.jsonl",
+    "eval_file": "data/sft_eval.jsonl",
+    "sources": [
+      {"name": "arbml/CIDAR", "task": "mixed", "limit": 400},
+      {"name": "RASHID778/arabic-instruct-curated", "task": "mixed", "limit": 400},
+      {"name": "bobez999/arabic-qa-dataset-sigir2024", "task": "qa", "limit": 400},
+      {"name": "hammh0a/Hala-4.6M-SFT", "task": "mixed", "limit": 400, "streaming": true},
+      {"name": "manual", "task": "mixed", "limit": 0}
+    ],
+    "synthetic": {
+      "arithmetic": 800,
+      "factual": 400
+    },
+    "train_split": 0.95,
+    "floor_per_task": 100,
+    "ceil_per_task": 2000,
+    "min_instr_len": 3,
+    "max_instr_len": 200,
+    "min_out_len": 3,
+    "max_out_len": 2000,
+    "min_total_len": 10,
+    "arabic_ratio": 0.5
+  },
+  "save_dir": "../weights",
+  "pretrained_weights": "../weights/pretrain_best.pt"
+}

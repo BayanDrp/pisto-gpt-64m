@@ -1,7 +1,10 @@
 import json
+import sys
 import torch as th
 import torch.nn.functional as F
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
 from model import Model
 
 # ── Load config ──────────────────────────────────────────────

@@ -4,6 +4,7 @@ import json
 import math
 import time
 import random
+import shutil
 from pathlib import Path
 
 import torch as th
@@ -80,14 +81,16 @@ def evaluate(mdl, loader, device, vocab_size, label_smoothing, steps=40):
                 break
             x = batch[:, :-1].to(device)
             y = batch[:, 1:].to(device)
-            with autocast("cuda", enabled=device == "cuda"):
-                logits = mdl(x)
+            # eval in fp32 (no autocast) to avoid fp16 overflow -> Inf loss
+            logits = mdl(x)
             loss = F.cross_entropy(
                 logits.reshape(-1, vocab_size),
                 y.reshape(-1),
                 ignore_index=0,
                 label_smoothing=label_smoothing,
             )
+            if not th.isfinite(loss):
+                continue
             total_loss += loss.item()
             pred = logits.argmax(-1)
             mask = y != 0
@@ -220,6 +223,9 @@ def main():
                 print(f"[eval] step={step} eval_loss={el:.4f} token_acc={acc:.3f}")
                 with open(log_path, "a", encoding="utf-8") as f:
                     f.write(json.dumps({"step": step, "eval_loss": el, "token_acc": acc}) + "\n")
+                if not math.isfinite(el):
+                    print("  eval non-finite (skipped, not counted)")
+                    continue
                 if el < best_eval:
                     best_eval = el
                     bad_epochs = 0
@@ -235,7 +241,11 @@ def main():
         if time_up:
             break
 
-    th.save({"model": _core(mdl).state_dict(), "step": step, "loss": best_eval}, save_dir / "instruct_last.pt")
+    last_path = save_dir / "instruct_last.pt"
+    th.save({"model": _core(mdl).state_dict(), "step": step, "loss": best_eval}, last_path)
+    if not best_path.exists():
+        shutil.copy(last_path, best_path)
+        print(f"  no finite eval -> copied last as best -> {best_path}")
     print(f"DONE step={step} best_eval={best_eval:.4f} | best={best_path}")
 
 
