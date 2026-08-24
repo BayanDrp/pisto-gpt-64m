@@ -3,6 +3,11 @@
 # ============================================================
 import sys, os, math, time, json, random
 from pathlib import Path
+import multiprocessing
+try:
+    multiprocessing.set_start_method("fork", force=True)
+except RuntimeError:
+    pass
 
 # Force line-buffered output so we can see progress/errors
 sys.stdout.reconfigure(line_buffering=True)
@@ -13,7 +18,7 @@ from torch.utils.data import Dataset, DataLoader
 
 # ── Load config ──────────────────────────────────────────────
 _HERE = Path(__file__).parent
-CONFIG_PATH = _HERE.parent / "config" / "train.json"
+CONFIG_PATH = _HERE.parent / "config" / os.getenv("PRETRAIN_CONFIG", "train.json")
 CONFIG_DIR = CONFIG_PATH.parent
 
 with open(CONFIG_PATH) as f:
@@ -49,6 +54,11 @@ mdl = LLMModel(
 ).to(device)
 
 mdl.lm_head.weight = mdl.embed.weight
+
+if th.cuda.is_available() and th.cuda.device_count() > 1:
+    print(f"Using {th.cuda.device_count()} GPUs via DataParallel")
+    mdl = th.nn.DataParallel(mdl)
+_core = lambda m: m.module if isinstance(m, th.nn.DataParallel) else m
 
 total = sum(p.numel() for p in mdl.parameters())
 print(f"Parameters: {total/1e6:.1f}M")
@@ -174,7 +184,7 @@ def evaluate(n=30):
             y = batch[:, 1:].to(device)
             with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
                 loss = F.cross_entropy(
-                    mdl(x).reshape(-1, mdl.vocab_size),
+                    mdl(x).reshape(-1, _core(mdl).vocab_size),
                     y.reshape(-1),
                     ignore_index=0,
                 )
@@ -189,7 +199,7 @@ def save_ckpt(step, loss):
     th.save({
         "step": step,
         "loss": loss,
-        "model": mdl.state_dict(),
+        "model": _core(mdl).state_dict(),
         "optimizer": optimizer.state_dict(),
     }, path)
     print(f"  ✓ pretrain_best.pt saved (step={step:,})")
@@ -203,7 +213,7 @@ resume_path = SAVE_DIR / "pretrain_best.pt"
 if resume_path.exists():
     print(f"Resuming from {resume_path}...")
     ckpt = th.load(resume_path, map_location=device, weights_only=False)
-    mdl.load_state_dict(ckpt["model"])
+    _core(mdl).load_state_dict(ckpt["model"])
     if "optimizer" in ckpt:
         optimizer.load_state_dict(ckpt["optimizer"])
     step = ckpt.get("step", 0)
@@ -260,7 +270,7 @@ while step < MAX_STEPS and not done:
     if elapsed_h >= MAX_HOURS:
         last_path = SAVE_DIR / "pretrain_last.pt"
         th.save({"step": step, "loss": loss_val,
-                 "model": mdl.state_dict(), "optimizer": optimizer.state_dict()}, last_path)
+                 "model": _core(mdl).state_dict(), "optimizer": optimizer.state_dict()}, last_path)
         print(f"\n⏱ Time limit reached. Saved pretrain_last.pt (step={step:,})")
         print(f"Best checkpoint: pretrain_best.pt (eval={best_eval:.4f})")
         done = True

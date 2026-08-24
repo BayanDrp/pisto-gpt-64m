@@ -8,20 +8,20 @@
         "max_len": 512
     },
     "training": {
-        "max_hours": 4.5,
+        "max_hours": 6,
         "grad_accum": 2,
-        "max_steps": 200000,
-        "warmup_steps": 500,
-        "log_every": 20,
-        "eval_every": 200,
+        "max_steps": 100000,
+        "warmup_steps": 1000,
+        "log_every": 50,
+        "eval_every": 500,
         "lr": 3e-4,
         "lr_min": 3e-5,
-        "batch_size": 16
+        "batch_size": 32
     },
     "dataset": {
         "name": "Jr23xd23/ArabicText-Large",
         "split": "train",
-        "max_docs": 100000,
+        "max_docs": 600000,
         "min_len": 50,
         "train_split": 0.95
     },

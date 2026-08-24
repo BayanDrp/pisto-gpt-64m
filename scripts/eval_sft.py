@@ -6,7 +6,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "llm"))
 import torch as th
-import generate
+from model import Model
 from tokenizer import ByteTokenizer
 
 AR_LETTERS = {"أ": "أ", "ب": "ب", "ج": "ج", "د": "د"}
@@ -117,8 +117,23 @@ def main():
     if not Path(weight).exists():
         print(f"weights not found: {weight}")
         return
-    mdl = generate.load_model(weight)
-    device = next(mdl.parameters()).device
+    cfg = json.load(open(REPO_ROOT / "config" / os.getenv("SFT_CONFIG", "sft.json")))
+    mcfg = cfg["model"]
+    mdl = Model(
+        vocab_size=ByteTokenizer().vocab_size,
+        d_model=mcfg["d_model"],
+        nhead=mcfg["nhead"],
+        dim_feedforward=mcfg["dim_feedforward"],
+        dropout=mcfg["dropout"],
+        transformer_layers=mcfg["transformer_layers"],
+        max_len=mcfg["max_len"],
+    )
+    mdl.lm_head.weight = mdl.embed.weight
+    ck = th.load(weight, map_location="cpu", weights_only=False)
+    sd = ck["model"] if isinstance(ck, dict) and "model" in ck else ck
+    mdl.load_state_dict(sd)
+    device = "cuda" if th.cuda.is_available() else "cpu"
+    mdl = mdl.to(device)
     mdl.eval()
 
     eval_heldout(mdl, REPO_ROOT / "data" / "sft_eval.jsonl", device)
