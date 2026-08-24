@@ -10,7 +10,7 @@
     "training": {
         "max_hours": 4,
         "grad_accum": 2,
-        "max_steps": 8000,
+        "max_steps": 15000,
         "warmup_steps": 100,
         "log_every": 20,
         "eval_every": 200,
@@ -22,7 +22,7 @@
     "dataset": {
         "alpaca_name": "arbml/CIDAR",
         "alpaca_split": "train",
-        "alpaca_max": 8000,
+        "alpaca_max": 16000,
         "alpaca_max_output_len": 2000,
         "alpaca_max_instruction_len": 80,
         "alpaca_min_output_len": 15,
