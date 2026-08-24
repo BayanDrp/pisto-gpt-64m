@@ -53,6 +53,7 @@ def chat(
     top_k=None,
     top_p=None,
     rep_pen=None,
+    inp="",
 ):
     # Fall back to config values if not provided
     max_new  = max_new  if max_new  is not None else gen_cfg["max_new"]
@@ -63,7 +64,10 @@ def chat(
 
     mdl = load_model(weight_path)
 
-    formatted = f"### Instruction:\n{prompt}\n\n### Response:\n"
+    if inp:
+        formatted = f"### Instruction:\n{prompt}\n\n### Input:\n{inp}\n\n### Response:\n"
+    else:
+        formatted = f"### Instruction:\n{prompt}\n\n### Response:\n"
     tokens = mdl.tokenizer.tokenize(formatted)
     if tokens[-1] == mdl.tokenizer.eos_id:
         tokens = tokens[:-1]
