@@ -1,6 +1,6 @@
 # Pisto GPT 68M
 
-This repo contains a 68M parameter decoder only GPT. It starts with TinyStories pretraining and then gets instruction tuned on Alpaca plus a small manual dataset.
+This repo contains a 68M parameter decoder only GPT. It starts with Arabic pretraining (Jr23xd23/ArabicText-Large) and then gets instruction tuned on Arabic Alpaca (arbml/CIDAR) plus a small manual dataset.
 
 ## Weights
 
@@ -52,7 +52,7 @@ You can train on your own machine or on a free Colab T4 (via the `colab` CLI).
 ### Local
 
 ```bash
-python training/pretrain.py    # pretrain from scratch on TinyStories
+python training/pretrain.py    # pretrain from scratch on ArabicText-Large
 python training/finetune.py    # instruction-tune weights/pretrain_best.pt
 ```
 

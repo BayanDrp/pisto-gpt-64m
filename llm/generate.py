@@ -98,9 +98,12 @@ def chat(
             generated.append(next_id)
             input_ids = th.cat([input_ids, th.tensor([[next_id]], device=device)], dim=1)
 
-            if len(generated) >= 5 and "###" in mdl.tokenizer.detokenize(generated[-8:]):
-                generated = generated[:-8]
-                break
+            # Stop if the model begins a new instruction turn instead of
+            # ending its response (small models sometimes chain examples).
+            if len(generated) >= 6:
+                tail = mdl.tokenizer.detokenize(generated[-12:])
+                if "### Instruction:" in tail or "## Instruction:" in tail:
+                    break
 
     return mdl.tokenizer.detokenize(generated).strip()
 

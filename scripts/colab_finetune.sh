@@ -13,17 +13,8 @@ REPO="/home/fedora/Documents/projects/pisto-gpt-64m"
 BUNDLE="/tmp/pisto-gpt-64m.tgz"
 REMOTE="/content/pg"
 
-echo "==> [1/8] Checking session '$SESSION'..."
-if ! colab status -s "$SESSION" 2>/dev/null | grep -qiE "busy|running|ready|idle"; then
-    echo "    Session not running — provisioning a new T4..."
-    colab new -s "$SESSION" --gpu T4
-    for i in $(seq 1 30); do
-        if colab status -s "$SESSION" 2>/dev/null | grep -qiE "busy|running|ready|idle"; then
-            break
-        fi
-        sleep 5
-    done
-fi
+echo "==> [1/8] Ensuring session '$SESSION' exists (create if missing)..."
+colab new -s "$SESSION" --gpu T4 2>/dev/null || echo "    (session already exists)"
 
 echo "==> [2/8] Uploading repo + pretrained weights to VM..."
 cd "$REPO"
