@@ -16,12 +16,12 @@
         "eval_every": 500,
         "lr": 3e-4,
         "lr_min": 3e-5,
-        "batch_size": 32
+        "batch_size": 64
     },
     "dataset": {
         "name": "Jr23xd23/ArabicText-Large",
         "split": "train",
-        "max_docs": 600000,
+        "max_docs": 1000000,
         "min_len": 50,
         "train_split": 0.95
     },
