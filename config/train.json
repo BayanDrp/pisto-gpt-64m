@@ -16,7 +16,7 @@
         "eval_every": 500,
         "lr": 3e-4,
         "lr_min": 3e-5,
-        "batch_size": 32
+        "batch_size": 30
     },
     "dataset": {
         "name": "Jr23xd23/ArabicText-Large",
