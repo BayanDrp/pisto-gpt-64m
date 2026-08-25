@@ -252,7 +252,7 @@ while step < MAX_STEPS and not done:
         y = micro[:, 1:].to(device, non_blocking=True)
         with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
             loss = F.cross_entropy(
-                mdl(x).reshape(-1, mdl.vocab_size),
+                mdl(x).reshape(-1, _core(mdl).vocab_size),
                 y.reshape(-1),
                 ignore_index=0,
             ) / GRAD_ACCUM
