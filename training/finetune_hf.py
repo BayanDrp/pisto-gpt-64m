@@ -8,6 +8,7 @@ import sys, os, math, time, json, random
 from pathlib import Path
 
 import subprocess, pkg_resources
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
 def _ensure_compatible_transformers():
     # AraGPT2's custom model code imports transformers.onnx, which was
@@ -83,6 +84,8 @@ if tokenizer.pad_token is None:
 PAD_ID = tokenizer.pad_token_id
 VOCAB  = tokenizer.vocab_size
 print(f"Tokenizer vocab: {VOCAB}, pad_id={PAD_ID}")
+
+model = model.to(device)
 
 if th.cuda.is_available() and th.cuda.device_count() > 1:
     print(f"Using {th.cuda.device_count()} GPUs via DataParallel")
