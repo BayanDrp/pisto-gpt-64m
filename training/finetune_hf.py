@@ -135,11 +135,17 @@ if grad_ckpt:
 else:
     print("Gradient checkpointing DISABLED (faster, uses more memory)")
 
-# Use every available GPU via DataParallel (2xT4, etc.)
-using_dp = n_gpus > 1
+# Use every available GPU via DataParallel (unless single_gpu requested)
+single_gpu = train_cfg.get("single_gpu", False)
+using_dp = (n_gpus > 1) and not single_gpu
 if using_dp:
     print(f"Using {n_gpus} GPUs via DataParallel")
     model = th.nn.DataParallel(model)
+elif single_gpu and n_gpus > 1:
+    th.cuda.set_device(0)
+    print("Single-GPU mode (cuda:0) — DataParallel disabled by config")
+elif n_gpus >= 1:
+    print("Using single GPU (cuda:0)")
 
 _core = model.module if isinstance(model, th.nn.DataParallel) else model
 print(f"Parameters: {sum(p.numel() for p in model.parameters())/1e6:.1f}M")
