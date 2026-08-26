@@ -1,0 +1,6 @@
+{
+    "model": {"d_model": 128, "nhead": 4, "dim_feedforward": 256, "dropout": 0.0, "transformer_layers": 2, "max_len": 128},
+    "training": {"max_hours": 0.05, "grad_accum": 1, "max_steps": 20, "warmup_steps": 5, "log_every": 5, "eval_every": 10, "lr": 3e-4, "lr_min": 3e-5, "batch_size": 16},
+    "dataset": {"name": "Jr23xd23/ArabicText-Large", "split": "train", "max_docs": 200, "min_len": 50, "train_split": 0.95},
+    "save_dir": "/tmp/pretest/weights"
+}
