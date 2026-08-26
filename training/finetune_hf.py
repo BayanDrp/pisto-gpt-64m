@@ -86,6 +86,15 @@ VOCAB  = model.config.vocab_size
 print(f"Tokenizer vocab: {VOCAB}, pad_id={PAD_ID}")
 
 model = model.to(device)
+try:
+    model.config.use_cache = False
+except Exception:
+    pass
+try:
+    model.gradient_checkpointing_enable()
+    print("Gradient checkpointing enabled ✓")
+except Exception as e:
+    print(f"⚠ gradient_checkpointing unavailable ({e})")
 
 if th.cuda.is_available() and th.cuda.device_count() > 1:
     print(f"Using {th.cuda.device_count()} GPUs via DataParallel")
