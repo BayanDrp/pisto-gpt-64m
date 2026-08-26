@@ -28,7 +28,8 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
 _HERE       = Path(__file__).parent
-CONFIG_PATH = _HERE.parent / "config" / "finetune_hf.json"
+ROOT        = _HERE.parent
+CONFIG_PATH = ROOT / "config" / "finetune_hf.json"
 CONFIG_DIR  = CONFIG_PATH.parent
 
 with open(CONFIG_PATH, encoding="utf-8") as f:
@@ -40,7 +41,7 @@ MAX_LEN      = cfg["max_len"]
 USE_ARABERT  = cfg["use_arabert"]
 train_cfg    = cfg["training"]
 ds_cfg       = cfg["dataset"]
-SAVE_DIR     = (CONFIG_DIR / cfg["save_dir"]).resolve()
+SAVE_DIR     = (ROOT / cfg["save_dir"]).resolve()
 SAVE_DIR.mkdir(parents=True, exist_ok=True)
 HF_TOKEN     = os.getenv("HF_TOKEN") or os.getenv("HUGGINGFACE_HUB_TOKEN")
 
@@ -76,7 +77,7 @@ from transformers import AutoModelForCausalLM, GPT2TokenizerFast
 print(f"Loading {MODEL_NAME} ...")
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME, trust_remote_code=TRUST_REMOTE, torch_dtype=th.float32)
-tokenizer = GPT2TokenizerFast.from_pretrained(MODEL_NAME)
+tokenizer = GPT2TokenizerFast.from_pretrained(MODEL_NAME, trust_remote_code=TRUST_REMOTE)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 PAD_ID = tokenizer.pad_token_id
@@ -93,7 +94,7 @@ print(f"Parameters: {sum(p.numel() for p in model.parameters())/1e6:.1f}M")
 PROMPT = "### Instruction:\n{instruction}\n\n### Response:\n{response}"
 samples = []
 
-local_path = (CONFIG_DIR / ds_cfg["local_path"]).resolve()
+local_path = (ROOT / ds_cfg["local_path"]).resolve()
 if local_path.exists():
     with open(local_path, encoding="utf-8") as f:
         for line in f:
@@ -110,8 +111,12 @@ else:
 
 samples = samples * int(ds_cfg.get("local_repeat", 1))
 
-hf_name = ds_cfg.get("hf_dataset")
-if hf_name:
+candidates = []
+if ds_cfg.get("hf_dataset"):
+    candidates.append(ds_cfg["hf_dataset"])
+candidates += ["arbml/ALPACA_AR", "M4ali/arabic-instruct", "OALL/Alpaca-Arabic", "vineetsharma/arabic-instruct"]
+hf_loaded = False
+for hf_name in candidates:
     try:
         from datasets import load_dataset
         print(f"Loading HF dataset {hf_name} ...")
@@ -127,9 +132,13 @@ if hf_name:
                 samples.append((inst, out)); added += 1
             if ds_cfg.get("hf_max") and added >= ds_cfg["hf_max"]:
                 break
-        print(f"Added {added} samples from HF dataset")
+        print(f"Added {added} samples from HF dataset {hf_name}")
+        hf_loaded = True
+        break
     except Exception as e:
-        print(f"⚠ Could not load HF dataset ({e}); using local data only")
+        print(f"⚠ dataset {hf_name} unavailable ({e}); trying next")
+if not hf_loaded:
+    print("⚠ No HF dataset loaded; using local data only")
 
 if not samples:
     raise SystemExit("No training samples found — aborting.")
