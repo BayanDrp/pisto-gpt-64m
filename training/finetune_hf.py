@@ -11,6 +11,13 @@ import subprocess, pkg_resources
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
+# Flush stdout per line so log viewers (Kaggle, etc.) show live progress
+# instead of hiding everything behind a block buffer until it fills.
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+except Exception:
+    pass
+
 
 def _ensure_compatible_transformers():
     # AraGPT2 custom code requires transformers.onnx, which was removed in transformers>=4.36
