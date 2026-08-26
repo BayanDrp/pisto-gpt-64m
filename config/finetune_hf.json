@@ -17,12 +17,16 @@
   },
   "dataset": {
     "local_path": "data/good_instruct_answers.jsonl",
-    "local_repeat": 50,
-    "hf_dataset": "vineetsharma/arabic-instruct",
+    "local_repeat": 3,
+    "hf_datasets": [
+      "arbml/alpaca_arabic",
+      "saillab/alpaca-arabic-cleaned",
+      "AhmedBou/Arabic_instruction_dataset_for_llm_ft",
+      "RASHID778/arabic-instruct-curated",
+      "FreedomIntelligence/alpaca-gpt4-arabic"
+    ],
     "hf_split": "train",
-    "hf_instruction_field": "instruction",
-    "hf_output_field": "output",
-    "hf_max": 2000,
+    "hf_max": 4000,
     "train_split": 0.95
   },
   "save_dir": "weights_hf",

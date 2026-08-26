@@ -130,34 +130,87 @@ else:
 
 samples = samples * int(ds_cfg.get("local_repeat", 1))
 
-candidates = []
-if ds_cfg.get("hf_dataset"):
-    candidates.append(ds_cfg["hf_dataset"])
-candidates += ["arbml/ALPACA_AR", "M4ali/arabic-instruct", "OALL/Alpaca-Arabic", "vineetsharma/arabic-instruct"]
-hf_loaded = False
-for hf_name in candidates:
+def _row_to_pair(row):
+    if not isinstance(row, dict):
+        return None
+    keys = set(row.keys())
+    if "instruction" in keys and "output" in keys:
+        inst = clean(row.get("instruction") or "")
+        inp = clean(row.get("input") or "") if "input" in keys else ""
+        out = clean(row.get("output") or "")
+        if inp:
+            inst = f"{inst}\n{inp}"
+        return (inst, out) if (inst and out) else None
+    if "instruction" in keys and "answer" in keys:
+        inst = clean(row.get("instruction") or "")
+        out = clean(row.get("answer") or "")
+        return (inst, out) if (inst and out) else None
+    if "query" in keys and "answer" in keys:
+        inst = clean(row.get("query") or "")
+        out = clean(row.get("answer") or "")
+        return (inst, out) if (inst and out) else None
+    if "prompt" in keys and "completion" in keys:
+        inst = clean(row.get("prompt") or "")
+        out = clean(row.get("completion") or "")
+        return (inst, out) if (inst and out) else None
+    if "messages" in keys and isinstance(row.get("messages"), list):
+        inst = out = None
+        for m in row["messages"]:
+            role = (m.get("role") or "").lower()
+            content = clean(m.get("content") or "")
+            if role == "user" and inst is None:
+                inst = content
+            elif role in ("assistant", "gpt") and out is None:
+                out = content
+        return (inst, out) if (inst and out) else None
+    if "conversations" in keys and isinstance(row.get("conversations"), list):
+        inst = out = None
+        for m in row["conversations"]:
+            frm = (m.get("from") or "").lower()
+            val = clean(m.get("value") or "")
+            if frm in ("human", "user") and inst is None:
+                inst = val
+            elif frm in ("gpt", "assistant") and out is None:
+                out = val
+        return (inst, out) if (inst and out) else None
+    return None
+
+def _load_hf_to(hf_ds, hf_max, samples):
+    added = 0
+    for row in hf_ds:
+        pair = _row_to_pair(row)
+        if pair is None:
+            continue
+        inst, out = pair
+        if 1 < len(out) < 600 and len(inst) < 1200:
+            samples.append((inst, out)); added += 1
+        if hf_max and added >= hf_max:
+            break
+    return added
+
+hf_names = ds_cfg.get("hf_datasets") or ([ds_cfg["hf_dataset"]] if ds_cfg.get("hf_dataset") else [])
+hf_max = ds_cfg.get("hf_max", 4000)
+hf_split = ds_cfg.get("hf_split", "train")
+total_hf = 0
+for hf_name in hf_names:
     try:
         from datasets import load_dataset
         print(f"Loading HF dataset {hf_name} ...")
-        load_kwargs = {"path": hf_name, "split": ds_cfg.get("hf_split", "train")}
+        load_kwargs = {"path": hf_name, "split": hf_split}
         if HF_TOKEN:
             load_kwargs["token"] = HF_TOKEN
         hf_ds = load_dataset(**load_kwargs)
-        inst_f, out_f = ds_cfg.get("hf_instruction_field", "instruction"), ds_cfg.get("hf_output_field", "output")
-        added = 0
-        for row in hf_ds:
-            inst, out = clean(row.get(inst_f, "") or ""), clean(row.get(out_f, "") or "")
-            if inst and out and len(out) < 600:
-                samples.append((inst, out)); added += 1
-            if ds_cfg.get("hf_max") and added >= ds_cfg["hf_max"]:
-                break
+        if isinstance(hf_ds, dict):
+            hf_ds = hf_ds.get(hf_split) or next(iter(hf_ds.values()))
+        added = _load_hf_to(hf_ds, hf_max, samples)
+        total_hf += added
         print(f"Added {added} samples from HF dataset {hf_name}")
-        hf_loaded = True
-        break
     except Exception as e:
         print(f"⚠ dataset {hf_name} unavailable ({e}); trying next")
-if not hf_loaded:
+if total_hf == 0:
     print("⚠ No HF dataset loaded; using local data only")
+else:
+    print(f"HF datasets contributed {total_hf:,} samples")
 
 if not samples:
     raise SystemExit("No training samples found — aborting.")
