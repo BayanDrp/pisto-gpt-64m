@@ -29,6 +29,11 @@ import torch as th
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
+# Auto-answer any "Do you wish to run the custom code? [y/N]" prompt so the
+# script never blocks in a non-interactive environment (Kaggle).
+import builtins
+builtins.input = lambda *a, **k: "y"
+
 _HERE       = Path(__file__).parent
 ROOT        = _HERE.parent
 CONFIG_PATH = ROOT / "config" / "finetune_hf.json"
@@ -76,11 +81,11 @@ def clean(text):
     return text
 
 # ── Load pretrained model + tokenizer ───────────────────────
-from transformers import AutoModelForCausalLM, GPT2TokenizerFast
+from transformers import AutoModelForCausalLM, GPT2TokenizerFast, AutoTokenizer
 print(f"Loading {MODEL_NAME} ...")
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME, trust_remote_code=TRUST_REMOTE, torch_dtype=th.float32)
-tokenizer = GPT2TokenizerFast.from_pretrained(MODEL_NAME, trust_remote_code=TRUST_REMOTE)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=TRUST_REMOTE)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 PAD_ID = tokenizer.pad_token_id
