@@ -1,4 +1,18 @@
-import argparse, json, torch as th
+import argparse, json, os, sys, subprocess, pkg_resources
+import torch as th
+
+def _ensure_compatible_transformers():
+    try:
+        import transformers
+        ver = transformers.__version__
+    except Exception:
+        ver = "0"
+    if ver == "0" or pkg_resources.parse_version(ver) >= pkg_resources.parse_version("4.36.0"):
+        print("Downgrading transformers -> 4.35.2 (AraGPT2 needs transformers.onnx) ...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "transformers==4.35.2"])
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+_ensure_compatible_transformers()
+
 from transformers import AutoModelForCausalLM, GPT2TokenizerFast
 
 PROMPTS = [

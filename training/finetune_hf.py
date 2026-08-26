@@ -7,6 +7,22 @@
 import sys, os, math, time, json, random
 from pathlib import Path
 
+import subprocess, pkg_resources
+
+def _ensure_compatible_transformers():
+    # AraGPT2's custom model code imports transformers.onnx, which was
+    # removed in transformers>=4.36. Auto-downgrade so it just works.
+    try:
+        import transformers
+        ver = transformers.__version__
+    except Exception:
+        ver = "0"
+    if ver == "0" or pkg_resources.parse_version(ver) >= pkg_resources.parse_version("4.36.0"):
+        print("Downgrading transformers -> 4.35.2 (AraGPT2 needs transformers.onnx) ...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "transformers==4.35.2"])
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+_ensure_compatible_transformers()
+
 import torch as th
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
