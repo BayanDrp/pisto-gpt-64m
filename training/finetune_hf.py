@@ -103,7 +103,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 print(f"Loading {MODEL_NAME} ...")
 model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME, trust_remote_code=TRUST_REMOTE, torch_dtype=th.float32
+    MODEL_NAME, trust_remote_code=TRUST_REMOTE, torch_dtype=th.float16
 )
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=TRUST_REMOTE)
 if tokenizer.pad_token is None:
@@ -119,7 +119,7 @@ try:
 except Exception:
     pass
 try:
-    model.gradient_checkpointing_enable()
+    model.gradient_checkpointing_enable(use_reentrant=False)
     print("Gradient checkpointing enabled ✓")
 except Exception as e:
     print(f"⚠ gradient_checkpointing unavailable ({e})")
@@ -468,7 +468,7 @@ while step < MAX_STEPS and not done:
 
     if step % LOG_EVERY == 0:
         ppl = math.exp(min(loss_accum, 20))
-        print(f"step={step:5d} | loss={loss_accum:.4f} | ppl={ppl:.1f} | lr={lr:.2e} | gnorm={gnorm:.2f} | {elapsed_h:.2f}h")
+        print(f"step={step:5d} | loss={loss_accum:.4f} | ppl={ppl:.1f} | lr={lr:.2e} | gnorm={gnorm:.2f} | {elapsed_h:.2f}h", flush=True)
         with open(log_path, "a", encoding="utf-8") as f:
             f.write(json.dumps({
                 "step": step, "loss": loss_accum, "ppl": ppl, "lr": lr,
