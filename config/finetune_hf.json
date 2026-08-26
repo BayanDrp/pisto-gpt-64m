@@ -1,18 +1,19 @@
 {
   "model_name": "aubmindlab/aragpt2-large",
   "trust_remote_code": true,
-  "max_len": 512,
+  "max_len": 256,
   "use_arabert": true,
   "training": {
     "max_hours": 1.8,
-    "grad_accum": 8,
+    "grad_accum": 4,
     "max_steps": 3000,
     "warmup_steps": 100,
     "log_every": 10,
     "eval_every": 150,
     "lr": 2e-5,
     "lr_min": 2e-6,
-    "batch_size": 4,
+    "batch_size": 8,
+    "gradient_checkpointing": true,
     "overfit_patience": 5
   },
   "dataset": {

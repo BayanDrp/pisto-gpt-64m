@@ -125,11 +125,15 @@ try:
     model.config.use_cache = False
 except Exception:
     pass
-try:
-    model.gradient_checkpointing_enable()
-    print("Gradient checkpointing enabled ✓")
-except Exception as e:
-    print(f"⚠ gradient_checkpointing unavailable ({e})")
+grad_ckpt = train_cfg.get("gradient_checkpointing", True)
+if grad_ckpt:
+    try:
+        model.gradient_checkpointing_enable()
+        print("Gradient checkpointing enabled ✓")
+    except Exception as e:
+        print(f"⚠ gradient_checkpointing unavailable ({e})")
+else:
+    print("Gradient checkpointing DISABLED (faster, uses more memory)")
 
 # Use every available GPU via DataParallel (2xT4, etc.)
 using_dp = n_gpus > 1
