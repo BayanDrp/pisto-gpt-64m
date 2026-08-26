@@ -19,6 +19,7 @@ import contextlib
 import io
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -27,6 +28,36 @@ _LLM_DIR = Path(__file__).parent
 if str(_LLM_DIR) not in sys.path:
     sys.path.insert(0, str(_LLM_DIR))
 _ROOT = _LLM_DIR.parent
+
+
+def _ensure_compatible_transformers():
+    """AraGPT2's custom code imports transformers.onnx (removed in >=4.36).
+
+    If a too-new transformers is present, try to pin 4.35.2 and re-exec.
+    Failures are non-fatal: the legacy .pt path doesn't need transformers,
+    and the HF path will surface a clear error if it's truly missing.
+    """
+    try:
+        import transformers
+        from packaging import version
+        if version.parse(transformers.__version__) < version.parse("4.36"):
+            return
+    except Exception:
+        return
+    try:
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", "-q", "transformers==4.35.2"]
+        )
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+    except Exception as e:
+        print(
+            f"[bridge] warning: could not pin transformers==4.35.2 ({e}); "
+            "HF model may fail to load",
+            flush=True,
+        )
+
+
+_ensure_compatible_transformers()
 
 import torch as th
 
@@ -51,18 +82,28 @@ def _load_gen_defaults():
         pass
 
 
-def _looks_like_hf(d: Path):
-    if (d / "config.json").is_file():
-        return True
-    return any(p.suffix in (".safetensors", ".bin") for p in d.iterdir())
+def _hf_dir(d: Path):
+    """Return the HF model directory under d (or d itself), or None."""
+    if (d / "config.json").is_file() or any(
+        p.suffix in (".safetensors", ".bin") for p in d.iterdir()
+    ):
+        return d
+    for sub in d.iterdir():
+        if sub.is_dir():
+            found = _hf_dir(sub)
+            if found is not None:
+                return found
+    return None
 
 
 def _resolve_model():
     """Return (path_or_dir, kind) where kind is 'hf' or 'pt', else (None, None)."""
-    # 1) drop-in weights/ folder (priority)
+    # 1) drop-in weights/ folder (priority) — root or a subfolder
     drop = _ROOT / "weights"
-    if drop.is_dir() and _looks_like_hf(drop):
-        return str(drop), "hf"
+    if drop.is_dir():
+        hf = _hf_dir(drop)
+        if hf is not None:
+            return str(hf), "hf"
 
     # 2) config/generate.json weight_path
     cfg_path = _ROOT / "config" / "generate.json"
@@ -71,7 +112,7 @@ def _resolve_model():
             wp = json.loads(cfg_path.read_text(encoding="utf-8")).get("weight_path")
             if wp:
                 p = (cfg_path.parent / wp).resolve()
-                if p.is_dir() and _looks_like_hf(p):
+                if p.is_dir() and _hf_dir(p) is not None:
                     return str(p), "hf"
                 if p.suffix == ".pt":
                     return str(p), "pt"

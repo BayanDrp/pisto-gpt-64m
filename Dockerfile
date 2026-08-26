@@ -1,39 +1,37 @@
-# Stage 1: build the Go web server
-FROM golang:1.23 AS builder
+# syntax=docker/dockerfile:1
 
+# ---- Build the Go web server ----
+FROM golang:1.22 AS gobuild
 WORKDIR /src
-
-# The Go server uses only the standard library, so we can copy the whole
-# module and build straight away.
-COPY go.mod ./
 COPY ui/ ./ui/
+RUN cd ui && CGO_ENABLED=0 go build -o /out/pisto-server .
 
-RUN go build -o /out/pisto-server ./ui/
-
-# Stage 2: Python runtime + compiled Go server
+# ---- Runtime (Python + the Go server) ----
 FROM python:3.11-slim
-
+ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
-# Python deps (torch CPU build via the cpu index)
+# Python deps for the model bridge (CPU torch; good for the 68M model).
+# NOTE: serving the 792M AraGPT2 on CPU may exceed the 120s request timeout;
+# use a GPU host / run locally for that model.
 COPY requirements.txt .
-RUN pip install --no-cache-dir --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Repo contents (config/, llm/, training/, ui/, scripts/, cli.py, requirements.txt)
+COPY cli.py .
 COPY config/ ./config/
+# Align the served port (config/web.json) with EXPOSE / `make docker` (-p 8080:8080)
+RUN python3 -c "import json,pathlib; p=pathlib.Path('config/web.json'); d=json.loads(p.read_text()); d['port']=8080; p.write_text(json.dumps(d, indent=2))"
 COPY llm/ ./llm/
-COPY training/ ./training/
 COPY ui/ ./ui/
 COPY scripts/ ./scripts/
-COPY cli.py ./cli.py
-COPY requirements.txt ./requirements.txt
+COPY training/ ./training/
 
-# Compiled Go server from the builder stage
-COPY --from=builder /out/pisto-server ./ui/pisto-server
+# Compiled server from the build stage
+COPY --from=gobuild /out/pisto-server /app/ui/pisto-server
+
+# Mount your model weights here (weights/ from the host)
+VOLUME ["/app/weights"]
 
 EXPOSE 8080
 
-# The Go server runs with CWD=/app so it finds ui/templates, ui/static and
-# config/web.json; the Python bridge is spawned as `python3 llm/server_bridge.py`
-# with cmd.Dir = /app, so python3 must be on PATH (it is, from python:3.11-slim).
-CMD ["./ui/pisto-server"]
+CMD ["/app/ui/pisto-server"]

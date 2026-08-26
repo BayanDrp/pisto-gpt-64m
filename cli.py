@@ -9,7 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 APP_SCRIPT = ROOT / "ui" / "pisto-server"  # Go web server (built from ui/main.go)
 PRETRAIN_SCRIPT = ROOT / "training" / "pretrain.py"
-FINE_TUNE_SCRIPT = ROOT / "training" / "finetune.py"
+FINE_TUNE_SCRIPT = ROOT / "training" / "finetune_hf.py"       # AraGPT2 finetune (primary)
+FINE_TUNE_LEGACY_SCRIPT = ROOT / "training" / "finetune.py"  # legacy 68M model
 
 
 def prompt_choice(title: str, options: dict[str, str]) -> str:
@@ -49,7 +50,9 @@ def run_command(command: str | None, mode: str | None) -> int | None:
             return run_script(PRETRAIN_SCRIPT)
         if mode in {"finetune", "fine-tune", "fine_tune"}:
             return run_script(FINE_TUNE_SCRIPT)
-        raise SystemExit("Use: python cli.py train pretrain|finetune")
+        if mode in {"finetune-legacy", "finetune_legacy", "legacy"}:
+            return run_script(FINE_TUNE_LEGACY_SCRIPT)
+        raise SystemExit("Use: python cli.py train pretrain|finetune|finetune-legacy")
 
     return None
 
@@ -78,14 +81,17 @@ def main(argv: list[str] | None = None) -> int:
     train_choice = prompt_choice(
         "Training mode",
         {
-            "1": "Pretrain",
-            "2": "Fine tuning",
+            "1": "Pretrain (68M from scratch)",
+            "2": "Fine-tune AraGPT2 (HuggingFace)",
+            "3": "Fine-tune legacy 68M model",
         },
     )
 
     if train_choice == "1":
         return run_script(PRETRAIN_SCRIPT)
-    return run_script(FINE_TUNE_SCRIPT)
+    if train_choice == "2":
+        return run_script(FINE_TUNE_SCRIPT)
+    return run_script(FINE_TUNE_LEGACY_SCRIPT)
 
 
 if __name__ == "__main__":

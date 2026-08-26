@@ -11,6 +11,3 @@ arabert
 
 # 8-bit optimizer (training only; script auto-falls back if missing)
 bitsandbytes
-
-# Chat UI
-gradio
