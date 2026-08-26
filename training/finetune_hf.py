@@ -103,7 +103,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 print(f"Loading {MODEL_NAME} ...")
 model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME, trust_remote_code=TRUST_REMOTE, torch_dtype=th.float16
+    MODEL_NAME, trust_remote_code=TRUST_REMOTE, torch_dtype=th.float32
 )
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=TRUST_REMOTE)
 if tokenizer.pad_token is None:
