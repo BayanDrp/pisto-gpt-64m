@@ -212,19 +212,31 @@ for name, p in model.named_parameters():
     else:
         decay.append(p)
 
-try:
-    from bitsandbytes.optim import AdamW8bit
-    optimizer = AdamW8bit([
-        {"params": decay, "weight_decay": 0.01},
-        {"params": no_decay, "weight_decay": 0.0},
-    ], lr=LR, betas=(0.9, 0.95))
-    print("Using 8-bit AdamW (bitsandbytes) ✓")
-except Exception as e:
-    print(f"⚠ bitsandbytes unavailable ({e}); using standard AdamW")
-    optimizer = th.optim.AdamW([
-        {"params": decay, "weight_decay": 0.01},
-        {"params": no_decay, "weight_decay": 0.0},
-    ], lr=LR, betas=(0.9, 0.95), fused=th.cuda.is_available())
+def _make_optimizer(decay, no_decay):
+    try:
+        from bitsandbytes.optim import AdamW8bit
+        return AdamW8bit([
+            {"params": decay, "weight_decay": 0.01},
+            {"params": no_decay, "weight_decay": 0.0},
+        ], lr=LR, betas=(0.9, 0.95)), True
+    except Exception:
+        pass
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "bitsandbytes"])
+        from bitsandbytes.optim import AdamW8bit
+        return AdamW8bit([
+            {"params": decay, "weight_decay": 0.01},
+            {"params": no_decay, "weight_decay": 0.0},
+        ], lr=LR, betas=(0.9, 0.95)), True
+    except Exception as e:
+        print(f"⚠ bitsandbytes unavailable ({e}); using standard AdamW")
+        return th.optim.AdamW([
+            {"params": decay, "weight_decay": 0.01},
+            {"params": no_decay, "weight_decay": 0.0},
+        ], lr=LR, betas=(0.9, 0.95), fused=th.cuda.is_available()), False
+
+optimizer, _use_8bit = _make_optimizer(decay, no_decay)
+print("Using 8-bit AdamW (bitsandbytes) ✓" if _use_8bit else "Using standard AdamW")
 scaler = th.amp.GradScaler("cuda", enabled=th.cuda.is_available())
 
 def get_lr(step):
