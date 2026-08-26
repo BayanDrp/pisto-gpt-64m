@@ -82,7 +82,7 @@ tokenizer = GPT2TokenizerFast.from_pretrained(MODEL_NAME, trust_remote_code=TRUS
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 PAD_ID = tokenizer.pad_token_id
-VOCAB  = tokenizer.vocab_size
+VOCAB  = model.config.vocab_size
 print(f"Tokenizer vocab: {VOCAB}, pad_id={PAD_ID}")
 
 model = model.to(device)
@@ -224,7 +224,7 @@ def evaluate(n=30):
                 break
             x = batch[:, :-1].to(device); y = batch[:, 1:].to(device)
             with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
-                loss = F.cross_entropy(model(x).reshape(-1, VOCAB), y.reshape(-1), ignore_index=PAD_ID)
+                loss = F.cross_entropy(model(x).logits.reshape(-1, VOCAB), y.reshape(-1), ignore_index=PAD_ID)
             total += loss.item(); nb += 1
     finally:
         model.train()
@@ -257,7 +257,7 @@ while step < MAX_STEPS and not done:
         x = micro[:, :-1].to(device, non_blocking=True)
         y = micro[:, 1:].to(device, non_blocking=True)
         with th.amp.autocast("cuda", enabled=th.cuda.is_available()):
-            loss = F.cross_entropy(model(x).reshape(-1, VOCAB), y.reshape(-1),
+            loss = F.cross_entropy(model(x).logits.reshape(-1, VOCAB), y.reshape(-1),
                                    ignore_index=PAD_ID) / GRAD_ACCUM
         scaler.scale(loss).backward()
         loss_val += loss.item()
