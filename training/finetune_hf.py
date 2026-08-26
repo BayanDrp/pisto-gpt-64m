@@ -9,6 +9,7 @@ from pathlib import Path
 
 import subprocess, pkg_resources
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
 def _ensure_compatible_transformers():
     # AraGPT2's custom model code imports transformers.onnx, which was
@@ -211,10 +212,19 @@ for name, p in model.named_parameters():
     else:
         decay.append(p)
 
-optimizer = th.optim.AdamW([
-    {"params": decay,    "weight_decay": 0.01},
-    {"params": no_decay, "weight_decay": 0.0},
-], lr=LR, betas=(0.9, 0.95), fused=th.cuda.is_available())
+try:
+    from bitsandbytes.optim import AdamW8bit
+    optimizer = AdamW8bit([
+        {"params": decay, "weight_decay": 0.01},
+        {"params": no_decay, "weight_decay": 0.0},
+    ], lr=LR, betas=(0.9, 0.95))
+    print("Using 8-bit AdamW (bitsandbytes) ✓")
+except Exception as e:
+    print(f"⚠ bitsandbytes unavailable ({e}); using standard AdamW")
+    optimizer = th.optim.AdamW([
+        {"params": decay, "weight_decay": 0.01},
+        {"params": no_decay, "weight_decay": 0.0},
+    ], lr=LR, betas=(0.9, 0.95), fused=th.cuda.is_available())
 scaler = th.amp.GradScaler("cuda", enabled=th.cuda.is_available())
 
 def get_lr(step):
