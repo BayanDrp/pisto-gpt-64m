@@ -1,0 +1,30 @@
+{
+  "model_name": "aubmindlab/aragpt2-large",
+  "trust_remote_code": true,
+  "max_len": 512,
+  "use_arabert": true,
+  "training": {
+    "max_hours": 1.5,
+    "grad_accum": 4,
+    "max_steps": 3000,
+    "warmup_steps": 100,
+    "log_every": 10,
+    "eval_every": 150,
+    "lr": 2e-5,
+    "lr_min": 2e-6,
+    "batch_size": 2,
+    "overfit_patience": 5
+  },
+  "dataset": {
+    "local_path": "data/good_instruct_answers.jsonl",
+    "local_repeat": 50,
+    "hf_dataset": "vineetsharma/arabic-instruct",
+    "hf_split": "train",
+    "hf_instruction_field": "instruction",
+    "hf_output_field": "output",
+    "hf_max": 2000,
+    "train_split": 0.95
+  },
+  "save_dir": "weights_hf",
+  "output_name": "aragpt2_instruct"
+}
