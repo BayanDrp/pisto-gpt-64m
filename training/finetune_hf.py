@@ -119,7 +119,7 @@ try:
 except Exception:
     pass
 try:
-    model.gradient_checkpointing_enable(use_reentrant=False)
+    model.gradient_checkpointing_enable()
     print("Gradient checkpointing enabled ✓")
 except Exception as e:
     print(f"⚠ gradient_checkpointing unavailable ({e})")
