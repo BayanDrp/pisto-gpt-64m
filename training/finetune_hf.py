@@ -51,6 +51,7 @@ device = th.device("cuda" if th.cuda.is_available() else "cpu")
 print(f"Device : {device}")
 if th.cuda.is_available():
     print(f"GPU    : {th.cuda.get_device_name(0)}")
+print("finetune_hf.py REV: 8bit-dp-v3 (bitsandbytes 8-bit Adam + custom-code copy)")
 
 # ── Arabic preprocessing (REQUIRED for AraGPT2) ─────────────
 prep = None
