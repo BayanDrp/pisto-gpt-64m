@@ -4,7 +4,7 @@
 # The borrowed model already speaks Arabic; we only adapt it.
 # Requires: torch, transformers, datasets, arabert, farasapy
 # ============================================================
-import sys, os, math, time, json, random
+import sys, os, math, time, json, random, inspect, shutil
 from pathlib import Path
 
 import subprocess, pkg_resources
@@ -261,9 +261,30 @@ def evaluate(n=30):
         model.train()
     return total / max(nb, 1)
 
+def _copy_custom_code(dst):
+    copied = []
+    try:
+        mod = sys.modules[model.__class__.__module__]
+        f = inspect.getfile(mod)
+        shutil.copy(f, os.path.join(dst, os.path.basename(f)))
+        copied.append(os.path.basename(f))
+    except Exception as e:
+        print(f"⚠ copy model code failed: {e}")
+    try:
+        ccls = _core.config.__class__
+        cmod = sys.modules[ccls.__module__]
+        f = inspect.getfile(cmod)
+        shutil.copy(f, os.path.join(dst, os.path.basename(f)))
+        copied.append(os.path.basename(f))
+    except Exception as e:
+        print(f"⚠ copy config code failed: {e}")
+    if copied:
+        print(f"  ✓ copied custom code: {copied}")
+
 def save_best(step, loss):
     _core.save_pretrained(SAVE_DIR)
     tokenizer.save_pretrained(SAVE_DIR)
+    _copy_custom_code(str(SAVE_DIR))
     th.save({"step": step, "loss": loss}, SAVE_DIR / "train_state.pt")
     print(f"  ✓ saved finetuned model -> {SAVE_DIR} (step={step:,})")
 
@@ -300,6 +321,7 @@ while step < MAX_STEPS and not done:
     elapsed = (time.time() - t0) / 3600
     if elapsed >= MAX_HOURS:
         _core.save_pretrained(SAVE_DIR); tokenizer.save_pretrained(SAVE_DIR)
+        _copy_custom_code(str(SAVE_DIR))
         th.save({"step": step, "loss": loss_val}, SAVE_DIR / "train_state.pt")
         print(f"\n⏱ Time limit. Saved -> {SAVE_DIR} (step={step:,})")
         done = True; break
