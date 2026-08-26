@@ -124,8 +124,9 @@ try:
 except Exception as e:
     print(f"⚠ gradient_checkpointing unavailable ({e})")
 
-# Only use DataParallel if batch_size can be split across GPUs
-if n_gpus > 1 and train_cfg.get("batch_size", 1) >= n_gpus:
+# Use every available GPU via DataParallel (2xT4, etc.)
+using_dp = n_gpus > 1
+if using_dp:
     print(f"Using {n_gpus} GPUs via DataParallel")
     model = th.nn.DataParallel(model)
 
@@ -283,6 +284,9 @@ train_ds = InstructDataset(samples[:split], seq_len=MAX_LEN)
 eval_ds  = InstructDataset(samples[split:], seq_len=MAX_LEN)
 
 batch_size = max(1, train_cfg.get("batch_size", 1))
+if using_dp and batch_size < n_gpus:
+    # give each GPU >=1 sample so DataParallel is actually effective
+    batch_size = n_gpus
 train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, collate_fn=collate, drop_last=True)
 eval_loader  = DataLoader(eval_ds,  batch_size=batch_size, shuffle=False, collate_fn=collate, drop_last=False)
 print("DataLoaders ready ✓")

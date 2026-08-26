@@ -1,4 +1,16 @@
+# Core
 torch>=2.0
 datasets>=2.0
 tokenizers>=0.15
 
+# Finetuning (AraGPT2 custom code needs transformers.onnx -> pin <4.36)
+transformers==4.35.2
+
+# Arabic preprocessing
+arabert
+
+# 8-bit optimizer (training only; script auto-falls back if missing)
+bitsandbytes
+
+# Chat UI
+gradio

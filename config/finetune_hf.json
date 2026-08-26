@@ -29,6 +29,6 @@
     "hf_max": 4000,
     "train_split": 0.95
   },
-  "save_dir": "weights_hf",
+  "save_dir": "weights",
   "output_name": "aragpt2_instruct"
 }

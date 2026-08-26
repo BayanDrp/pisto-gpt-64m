@@ -1,5 +1,10 @@
 weights/*.pt
 weights/**/*.pt
+weights/*.safetensors
+weights/*.bin
+weights/pytorch_model*
+weights_hf/
+!weights/.gitkeep
 __pycache__/
 *.pyc
 *.pyo
