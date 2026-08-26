@@ -40,8 +40,11 @@ if USE_ARABERT:
         from arabert.preprocess import ArabertPreprocessor
     except Exception:
         from arabert.arabert_preprocessor import ArabertPreprocessor
-    prep = ArabertPreprocessor(model_name=MODEL_NAME)
-    print("ArabertPreprocessor ready ✓")
+    try:
+        prep = ArabertPreprocessor(model_name=MODEL_NAME)
+        print("ArabertPreprocessor ready ✓")
+    except Exception as e:
+        print(f"⚠ ArabertPreprocessor unavailable ({e}); continuing WITHOUT Arabic preprocessing")
 
 def clean(text):
     text = str(text).strip()

@@ -68,7 +68,11 @@ def main():
         from arabert.preprocess import ArabertPreprocessor
     except Exception:
         from arabert.arabert_preprocessor import ArabertPreprocessor
-    prep = ArabertPreprocessor(model_name=args.base_model)
+    try:
+        prep = ArabertPreprocessor(model_name=args.base_model)
+    except Exception as e:
+        print(f"⚠ ArabertPreprocessor unavailable ({e}); running WITHOUT Arabic preprocessing")
+        prep = None
 
     model = AutoModelForCausalLM.from_pretrained(args.model_dir, trust_remote_code=True)
     tok = GPT2TokenizerFast.from_pretrained(args.model_dir)
